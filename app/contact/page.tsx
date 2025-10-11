@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,10 +76,10 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Ready to start your project? Get in touch and let's discuss how we can help bring your vision to life
+            Ready to start your project? Get in touch and let&apos;s discuss how we can help bring your vision to life
           </p>
         </div>
       </section>
@@ -91,7 +92,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold text-[#111827] mb-6">Get in Touch</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Have a project in mind? Questions about our services? We'd love to hear from you. Fill out the form or reach out directly through any of the channels below.
+                Have a project in mind? Questions about our services? We&apos;d love to hear from you. Fill out the form or reach out directly through any of the channels below.
               </p>
 
               <div className="space-y-6 mb-8">
@@ -152,7 +153,7 @@ export default function ContactPage() {
                   {submitStatus === "success" && (
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                       <p className="text-green-800 font-medium">
-                        Thank you! We'll get back to you soon.
+                        Thank you! We&apos;ll get back to you soon.
                       </p>
                     </div>
                   )}
@@ -249,10 +250,10 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild variant="outline" size="lg" className="border-[#1E3A8A] text-[#111827] hover:bg-[#1E3A8A] hover:text-white">
-              <a href="/#faq">View FAQs</a>
+              <Link href="/#faq">View FAQs</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-[#1E3A8A] text-[#111827] hover:bg-[#1E3A8A] hover:text-white">
-              <a href="/services">Our Services</a>
+              <Link href="/services">Our Services</Link>
             </Button>
           </div>
         </div>

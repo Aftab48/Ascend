@@ -23,7 +23,7 @@ export default function AboutPage() {
               About Ascend Tech Agency
             </h1>
             <p className="text-xl md:text-2xl text-gray-300">
-              We're a team of passionate technologists, designers, and problem
+              We&apos;re a team of passionate technologists, designers, and problem
               solvers dedicated to building exceptional digital experiences
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-lg text-gray-700 mb-4">{companyInfo.story}</p>
               <p className="text-lg text-gray-700">
-                Today, we're proud to serve clients across{" "}
+                Today, we&apos;re proud to serve clients across{" "}
                 {companyInfo.stats[3].value} countries, having completed{" "}
                 {companyInfo.stats[0].value} projects for{" "}
                 {companyInfo.stats[1].value} happy clients. But our mission
@@ -110,6 +110,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {companyInfo.values.map((value) => {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const IconComponent = (Icons as any)[value.icon] || Icons.Star;
               return (
                 <Card
@@ -200,7 +201,7 @@ export default function AboutPage() {
             Want to Work With Us?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            We're always looking for exciting projects and great partnerships
+            We&apos;re always looking for exciting projects and great partnerships
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

@@ -19,7 +19,7 @@ export default function PortfolioPage() {
             Our Portfolio
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Explore our latest projects and see how we've helped businesses achieve their digital goals
+            Explore our latest projects and see how we&apos;ve helped businesses achieve their digital goals
           </p>
         </div>
       </section>

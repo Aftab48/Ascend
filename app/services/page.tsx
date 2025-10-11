@@ -31,6 +31,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {services.map((service, index) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const IconComponent = (Icons as any)[service.icon] || Icons.Code;
 
             return (
@@ -169,7 +170,7 @@ export default function ServicesPage() {
             Not Sure Which Service You Need?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Schedule a free consultation and we'll help you find the perfect
+            Schedule a free consultation and we&apos;ll help you find the perfect
             solution for your business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

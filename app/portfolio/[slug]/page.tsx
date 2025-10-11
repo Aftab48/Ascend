@@ -230,7 +230,7 @@ export default function ProjectPage({ params }: Props) {
             Want Similar Results for Your Business?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's discuss how we can help you achieve your goals with a custom solution
+            Let&apos;s discuss how we can help you achieve your goals with a custom solution
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#3B82F6] hover:bg-[#3B82F6]/90">

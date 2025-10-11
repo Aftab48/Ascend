@@ -168,7 +168,7 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
-              Explore our recent work and see how we've helped businesses achieve their goals
+              Explore our recent work and see how we&apos;ve helped businesses achieve their goals
             </p>
           </div>
 
@@ -204,7 +204,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from businesses we've helped succeed
+              Don&apos;t just take our word for it - hear from businesses we&apos;ve helped succeed
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function Home() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-[#6B7280]">
-              Got questions? We've got answers
+              Got questions? We&apos;ve got answers
             </p>
           </div>
 
@@ -263,7 +263,7 @@ export default function Home() {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Let's discuss how we can help transform your ideas into reality
+            Let&apos;s discuss how we can help transform your ideas into reality
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-[#1E3A8A] hover:bg-gray-100">
