@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import Cookies from 'js-cookie';
 
 // Note: Metadata should be exported from a separate layout.tsx or page wrapper
 // since this is a client component. For now, the parent layout handles it.
@@ -39,12 +40,27 @@ export default function ContactPage() {
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+
+    useEffect(() => {
+        const prevForm = Cookies.get('formData')
+        if(prevForm){
+            try {
+                setFormData(JSON.parse(prevForm))
+            } catch (error) {
+                console.error('Error parsing saved form data:', error);
+            }
+        }
+    }, []);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const newForm = {
+            ...formData,
+            [e.target.name]: e.target.value,
+        }
+
+        setFormData(newForm);
+        Cookies.set('formData', JSON.stringify(newForm), { expires: 7 });
+    };
 
   const contactInfo = [
     {
