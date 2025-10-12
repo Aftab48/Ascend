@@ -44,7 +44,7 @@ export default function ContactPage() {
     useEffect(() => {
         const prevForm = Cookies.get('formData')
         if(prevForm){
-            try {
+            try{
                 setFormData(JSON.parse(prevForm))
             } catch (error) {
                 console.error('Error parsing saved form data:', error);
