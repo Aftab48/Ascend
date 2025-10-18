@@ -1,0 +1,46 @@
+[
+
+    {
+    "title": "Web Development",
+    "content": "Modern, high-performance websites and full-stack apps built for scalability and speed.",
+    "icon":"web.png"
+  },
+   {
+    "title": "Service Integration",
+    "content": "Seamlessly connect APIs, automation tools, and custom workflows to supercharge your business.",
+    "icon":"services.png"
+  },
+  {
+    "title":"App Developement",
+    "content":"Native-quality mobile apps that feel right at home on every device.",
+    "icon":"app.png"
+  },
+  {
+    "title":"Brand Design",
+    "content":"Crafting visual identities that tell your story and make your brand unforgettable.",
+    "icon":"brand.png"
+  },
+   {
+    "title":"UI/UX Design",
+    "content":"Intuitive, aesthetic, and user-first interfaces designed to convert and delight.",
+
+    "icon":"ui.png"
+  },
+   {
+    "title":"Search Engine Optimisation",
+    "content":"CRank higher, get noticed, and drive organic growth with data-driven SEO strategies.",
+    "icon":"search.png"
+  },
+   {
+    "title":"Web3 & Blockchain",
+    "content":"Build decentralized apps, smart contracts, and token systems that shape the future of the web.",
+    "icon":"web3.png"
+  },
+   {
+    "title":"Graphic Design",
+    "content":"Impactful visuals, illustrations, and digital assets that bring ideas to life.",
+
+    "icon":"graphic.png"
+  }
+
+]

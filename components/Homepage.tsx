@@ -1,27 +1,51 @@
 "use client"
-
-
+import services from '@/public/services.json'
+import Image from 'next/image'
 
 function Header() {
     return (
         <header className="relative px-4 md:px-8 mt-44 md:mt-52 lg:mt-[265px]">
             {/* Header container */}
-            <div className="relative w-full max-w-[1446px] mx-auto min-h-[150px] md:min-h-[180px] lg:min-h-[217px]">
+            <div className="relative w-full mx-auto"
+                 style={{
+                     maxWidth: 'min(1446px, 90vw)',
+                     minHeight: 'clamp(150px, 15vw, 217px)'
+                 }}>
                 {/* Header logo positioned vertically */}
-                <div className="absolute left-0 md:left-[5%] lg:left-0 top-0 z-10 hidden md:block">
+                <div className="absolute z-10 hidden md:block"
+                     style={{
+                         left: 'clamp(0px, 1%, 24px)',
+                         top: '0'
+                     }}>
                     <img
                         src="/assets/header-logo.png"
                         alt="Header Logo"
-                        className="w-16 md:w-24 lg:w-[120px] h-auto object-contain"
+                        style={{
+                            width: 'clamp(64px, 6vw, 120px)',
+                            height: 'auto'
+                        }}
+                        className="object-contain"
                     />
                 </div>
 
                 {/* Tagline */}
-                <div className="w-full md:w-[85%] lg:w-[80%] mx-auto pt-0 md:pt-0 pl-0 md:pl-0">
-                    <h1 className="text-[28px] md:text-5xl lg:text-[65px] font-medium leading-tight md:leading-none tracking-[0.08em] text-center md:text-center text-black" style={{fontFamily: 'Exo 2, sans-serif'}}>
+                <div className="w-full mx-auto pt-0 pl-0"
+                     style={{
+                         maxWidth: 'clamp(85%, 85%, 80%)'
+                     }}>
+                    <h1 className="text-center text-black leading-tight md:leading-none" 
+                        style={{
+                            fontFamily: 'Exo 2, sans-serif',
+                            fontSize: 'clamp(28px, 3.5vw, 65px)',
+                            fontWeight: 500,
+                            letterSpacing: '0.08em'
+                        }}>
                         Transform Your Ideas Into
                         <br />
-                        <span className="text-[32px] md:text-6xl lg:text-[70px] font-bold">
+                        <span style={{
+                            fontSize: 'clamp(32px, 4vw, 70px)',
+                            fontWeight: 700
+                        }}>
               Powerful Digital Solutions
             </span>
 
@@ -32,7 +56,13 @@ function Header() {
                 <img
                     src="/assets/three-line.png"
                     alt="Decoration"
-                    className="absolute hidden lg:block w-20 md:w-24 lg:w-[127px] h-auto rotate-[97deg] top-10 md:top-12 lg:top-6 right-[6%]"
+                    className="absolute hidden lg:block rotate-[97deg]"
+                    style={{
+                        width: 'clamp(80px, 6.5vw, 127px)',
+                        height: 'auto',
+                        top: 'clamp(24px, 1.5vw, 24px)',
+                        right: 'clamp(5%, 7vw, 9%)'
+                    }}
                 />
             </div>
         </header>
@@ -41,7 +71,7 @@ function Header() {
 
 function HeroSection() {
     return (
-        <section className="relative px-4 md:px-8" style={{minHeight: 'clamp(800px, 85vw, 1070px)', paddingBottom: '100px'}}>
+        <section className="relative px-4 " style={{minHeight: 'clamp(800px, 85vw, 1070px)', paddingBottom: '100px', marginTop:'-120px'}}>
             {/* Mobile Layout - Stacked vertically */}
             <div className="md:hidden flex flex-col items-center pt-8 gap-6">
                 {/* Subtext-1 for mobile */}
@@ -62,7 +92,7 @@ function HeroSection() {
                 </div>
 
                 {/* Hero img for mobile */}
-                <div className="w-[300px] h-[300px]">
+                <div className="w-70 h-65">
                     <img
                         src="/assets/hero-img.png"
                         alt="Hero"
@@ -84,24 +114,45 @@ function HeroSection() {
 
 
             {/* Subtext-1 container */}
-            <div className="hidden md:block absolute left-4 md:left-[5%] lg:left-20 max-w-sm top-48 md:top-64 lg:top-[344px]">
+            <div className="hidden md:block absolute top-48 md:top-64 lg:top-[344px]"
+                 style={{
+                     left: 'clamp(16px, 5%, 80px)',
+                     maxWidth: 'clamp(320px, 24vw, 380px)'
+                 }}>
                 {/* Three-line decoration above 'W' */}
                 <img
                     src="/assets/three-line.png"
                     alt="Decoration"
-                    className="absolute w-12 md:w-16 lg:w-[71px] h-auto rotate-[9.23deg] top-0 left-0"
+                    className="absolute rotate-[9.23deg] top-0 left-0"
+                    style={{
+                        width: 'clamp(48px, 3.5vw, 71px)',
+                        height: 'auto'
+                    }}
                 />
 
                 {/* Content part */}
-                <div className="pt-12 md:pt-[51px] pl-8 md:pl-16 max-w-[360px]">
-                    <p className="text-base md:text-xl lg:text-[28px] leading-none tracking-[2px] text-black" style={{fontFamily: 'Work Sans, sans-serif'}}>
+                <div className="pt-12 md:pt-[42px]"
+                     style={{
+                         paddingLeft: 'clamp(32px, 3vw, 64px)'
+                     }}>
+                    <p className="text-black leading-tight tracking-wide" 
+                       style={{
+                           fontFamily: 'Work Sans, sans-serif',
+                           fontSize: 'clamp(16px, 1.4vw, 28px)',
+                           lineHeight: '1.15',
+                           letterSpacing: '0.05em'
+                       }}>
                         We build exceptional <span className="font-semibold">web</span> and <span className="font-semibold">mobile applications</span>, <span className="font-semibold">custom software</span>, and design experiences, from <span className="font-semibold">branding</span> and <span className="font-semibold">UI/UX</span> to <span className="font-semibold">graphic design</span> - that drive growth and delight users.
                     </p>
                 </div>
             </div>
 
             {/* Hero img */}
-            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 md:left-[25%] md:translate-x-0 w-[300px] md:w-[600px] lg:w-[1000px] h-[300px] md:h-[600px] lg:h-[1000px] top-24 md:top-28 lg:top-[135px]">
+            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-24 md:top-28 lg:top-[100px]"
+                 style={{
+                     width: 'clamp(600px, 52vw, 1000px)',
+                     height: 'clamp(600px, 52vw, 1000px)'
+                 }}>
                 <img
                     src="/assets/hero-image.png"
                     alt="Hero"
@@ -110,29 +161,61 @@ function HeroSection() {
             </div>
 
             {/* 5 stars imgs */}
-            <div className="absolute right-4 md:right-[5%] lg:right-[calc(100%-1616px)] hidden md:flex gap-2 top-60 md:top-72 lg:top-[373px]">
+            <div className="absolute hidden md:flex gap-2 top-60 md:top-72 lg:top-[373px]"
+                 style={{
+                     right: 'clamp(16px, 5%, 80px)',
+                     maxWidth: 'min(250px, 18vw)'
+                 }}>
                 {[...Array(5)].map((_, i) => (
-                    <img key={i} src="/assets/star.png" alt="star" className="w-9 lg:w-11 h-9 lg:h-11 object-contain" />
+                    <img key={i} src="/assets/star.png" alt="star" 
+                         style={{
+                             width: 'clamp(32px, 2.2vw, 44px)',
+                             height: 'clamp(32px, 2.2vw, 44px)'
+                         }}
+                         className="object-contain" />
                 ))}
             </div>
 
             {/* Subtext-2 */}
-            <div className="absolute right-4 md:right-[5%] lg:right-[calc(100%-1616px)] hidden md:block max-w-xs top-72 md:top-80 lg:top-[426px]">
-                <p className="text-lg md:text-xl lg:text-[28px] font-semibold leading-none text-right text-black" style={{fontFamily: 'Work Sans, sans-serif'}}>
+            <div className="absolute hidden md:block top-72 md:top-80 lg:top-[426px]"
+                 style={{
+                     right: 'clamp(16px, 5%, 80px)',
+                     maxWidth: 'clamp(280px, 20vw, 360px)'
+                 }}>
+                <p className="font-semibold leading-tight text-right text-black" 
+                   style={{
+                       fontFamily: 'Work Sans, sans-serif',
+                       fontSize: 'clamp(18px, 1.5vw, 28px)',
+                       lineHeight: '1.2'
+                   }}>
                     5 years strong.<br />
                     500+ success stories.
                 </p>
             </div>
 
             {/* Subtext-3 */}
-            <div className="absolute right-4 md:right-[3%] lg:right-[calc(100%-1608px)] hidden md:block max-w-md top-96 md:top-[400px] lg:top-[591px]">
-                <p className="text-lg md:text-xl lg:text-[28px] font-semibold leading-none text-right text-[#0D0D0D]" style={{fontFamily: 'Work Sans, sans-serif'}}>
+            <div className="absolute hidden md:block top-96 md:top-[400px] lg:top-[591px]"
+                 style={{
+                     right: 'clamp(16px, 3%, 60px)',
+                     maxWidth: 'clamp(300px, 22vw, 420px)'
+                 }}>
+                <p className="font-semibold leading-tight text-right text-[#0D0D0D]" 
+                   style={{
+                       fontFamily: 'Work Sans, sans-serif',
+                       fontSize: 'clamp(18px, 1.5vw, 28px)',
+                       lineHeight: '1.2'
+                   }}>
                     Let&apos;s create something significant together!
                 </p>
             </div>
 
             {/* Sparkle img */}
-            <div className="absolute right-2 md:right-[1%] lg:right-[calc(100%-1608px)] hidden lg:block w-20 md:w-24 lg:w-[109px] h-20 md:h-24 lg:h-[109px] top-[450px] md:top-[500px] lg:top-[656px]">
+            <div className="absolute hidden lg:block top-[450px] md:top-[500px] lg:top-[656px]"
+                 style={{
+                     right: 'clamp(8px, 1%, 40px)',
+                     width: 'clamp(80px, 6vw, 109px)',
+                     height: 'clamp(80px, 6vw, 109px)'
+                 }}>
                 <img
                     src="/assets/sparkles.png"
                     alt="Sparkle"
@@ -218,7 +301,7 @@ function WhyChooseUs() {
     ];
 
     return (
-        <section className="relative px-4 md:px-17 mx-auto md:mx-0" style={{
+        <section className="relative px-4 md:px-17 mx-auto md:mx-0 " style={{
             marginTop: 'clamp(100px, 10vw, 143px)',
             marginLeft: 'clamp(0px, 0vw, 121px)',
             maxWidth: '1509px'
@@ -388,98 +471,433 @@ function WhyChooseUs() {
 
 function ServicesSection() {
     return (
-        <section className="relative px-4 md:px-8 mx-auto" style={{
-            maxWidth: '1728px',
-            marginTop: 'clamp(80px, 8vw, 150px)'
-        }}>
-            {/* Main container box */}
-            <div className="relative" style={{
-                width: '100%',
-                maxWidth: '1728px',
-                minHeight: '1654px',
-                borderRadius: '60px',
-                backgroundColor: '#D9D9D91A',
-                border: '1px solid #FFFFFF',
-                backdropFilter: 'blur(194.27px)',
-                WebkitBackdropFilter: 'blur(194.27px)',
-                boxShadow: '0px 4px 16.9px 0px #00000040',
-                padding: 'clamp(40px, 4vw, 80px)'
-            }}>
-                {/* "WHAT WE DO" vertical text */}
-                <div className="absolute flex items-center justify-center" style={{
-                    width: '90px',
-                    height: '230px',
-                    top: 'clamp(100px, 10vw, 150px)',
-                    left: '5px',
-                    writingMode: 'vertical-rl',
-                    transform: 'rotate(180deg)',
-                    backgroundColor:'#1FE5FF'
-                }}>
-                    <p style={{
-                        fontFamily: 'Exo 2, sans-serif',
-                        fontWeight: 600,
-                        fontSize: 'clamp(20px, 1.8vw, 28px)',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        textAlign: 'center',
-                        color: '#0d0d0d'
-                    }}>
+        <section className="relative px-4 md:px-6 lg:px-0 mx-auto w-full mt-20 md:mt-28 lg:mt-32 xl:mt-36">
+            
+            <div className="relative mx-auto w-full  min-h-[1654px] rounded-[60px] bg-[#D9D9D91A] border border-white backdrop-blur-[194.27px] shadow-[0px_4px_16.9px_0px_#00000040] p-8 md:p-12 lg:p-20 xl:p-20 overflow-hidden">
+               
+                <div className="absolute flex items-center justify-center w-[60px] md:w-[90px] h-[180px] md:h-[230px] top-20 md:top-24 lg:top-28 xl:top-36 left-[5px] [writing-mode:vertical-rl] rotate-180 bg-[#1FE5FF]">
+                    <p className="font-[Exo_2] font-semibold text-base md:text-lg lg:text-2xl xl:text-[28px] leading-[100%] text-center text-[#0d0d0d]">
                         WHAT WE DO
                     </p>
                 </div>
 
-                {/* Heading container */}
-                <div className="flex flex-wrap items-center gap-4 mb-8" style={{marginLeft: 'clamp(80px, 8vw, 150px)'}}>
-                    {/* "Our" text */}
-                    <h2 style={{
-                        fontFamily: 'Exo 2, sans-serif',
-                        fontWeight: 600,
-                        fontSize: 'clamp(35px, 4.5vw, 65px)',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        color: '#FFFFFF',
-                        width: 'clamp(70px, 9vw, 95px)',
-                        height: 'auto'
-                    }}>
+               
+                <div className="flex flex-wrap items-center gap-2 md:gap-4 mb-8 ml-16 md:ml-20 lg:ml-24 xl:ml-36 pr-4">
+                   
+                    <h2 className="font-[Exo_2] font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-[65px] leading-[100%] text-white w-auto">
                         Our
                     </h2>
 
-                    {/* "Services" in cyan box */}
-                    <div className="" style={{
-                        width: 'clamp(220px, 23vw, 280px)',
-                        height: 'clamp(60px, 6.5vw, 75px)',
-                        backgroundColor: '#1FE5FF',
-                        transform: 'skewX(-15deg)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin:'20px'
-                    }}>
-                        <h2 style={{
-                            fontFamily: 'Exo 2, sans-serif',
-                            fontWeight: 600,
-                            fontSize: 'clamp(35px, 4.5vw, 65px)',
-                            lineHeight: '100%',
-                            letterSpacing: '0%',
-                            color: '#000000',
-                            borderRadius: '10px',
-                            transform: 'skewX(15deg)'
-                        }}>
+                    
+                    <div className="w-40 md:w-52 lg:w-64 xl:w-[280px] h-12 md:h-14 lg:h-[70px] xl:h-[75px] bg-[#1FE5FF] -skew-x-[15deg] flex items-center justify-center mx-2 md:mx-5">
+                        <h2 className="font-[Exo_2] font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-[65px] leading-[100%] text-black rounded-[10px] skew-x-[15deg]">
                             Services
                         </h2>
                     </div>
                 </div>
 
-                {/* Services content will go here */}
-                <div style={{
-                    marginTop: 'clamp(40px, 4vw, 80px)'
-                }}>
-                    {/* Services grid or content to be added */}
+                
+                <div className="ml-16 md:ml-20 lg:ml-24 xl:ml-36 mt-6 md:mt-10 pr-4">
+                    <h3 className="max-w-full font-['Work_Sans'] font-medium text-xl md:text-2xl lg:text-3xl xl:text-[32px] leading-tight md:leading-[100%] text-white">
+                        Comprehensive digital solutions tailored to your business needs.
+                    </h3>
+                </div>
+               
+                
+                <div className="mt-8 md:mt-12 lg:mt-16 xl:mt-20 ml-16 md:ml-20 lg:ml-24 xl:ml-36 pr-4 md:pr-6 lg:pr-8">
+                    
+                    <div className='flex flex-col gap-9 md:gap-10'>
+                        {/* Row 1 - 3 cards */}
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-14'>
+                            
+                            <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[0].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[0].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-white font-["Work_Sans"]  text-base md:text-lg lg:text-2xl  leading-snug md:leading-[100%] w-full'>
+                                        {services[0].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                    />
+                                </div>
+                            </div>
+
+                            
+                            <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[1].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[1].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                        {services[1].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more-black.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] '
+                                    />
+                                </div>
+                            </div>
+
+                            
+                            <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[2].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[2].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                        {services[2].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more.png'
+                                        width={45}
+                                        height={42}
+                                        alt='Learn More'
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Row 2 - 2 cards centered */}
+                        <div className='flex justify-center w-full'>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-18 w-full max-w-full lg:max-w-[66%]'>
+                                
+                                <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] backdrop-blur-[30px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                    <div className='flex flex-col gap-2 md:gap-3'>
+                                        <div className='flex gap-3 md:gap-4 items-start'>
+                                            <Image
+                                                src={`/assets/${services[3].icon}`}
+                                                alt="Service icon"
+                                                height={70}
+                                                width={70}
+                                                className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                            />
+                                            <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                                {services[3].title}
+                                            </h2>
+                                        </div>
+                                        <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                            {services[3].content}
+                                        </p>
+                                    </div>
+                                    <div className='flex items-center gap-2 mt-3'>
+                                        <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                            Learn More
+                                        </p>
+                                        <Image
+                                            src='/assets/learn-more-black.png'
+                                            width={35}
+                                            height={33}
+                                            alt='Learn More'
+                                            className='rotate-180 w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                        />
+                                    </div>
+                                </div>
+
+                                
+                                <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                    <div className='flex flex-col gap-2 md:gap-3'>
+                                        <div className='flex gap-3 md:gap-4 items-start'>
+                                            <Image
+                                                src={`/assets/${services[4].icon}`}
+                                                alt="Service icon"
+                                                height={70}
+                                                width={70}
+                                                className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                            />
+                                            <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                                {services[4].title}
+                                            </h2>
+                                        </div>
+                                        <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                            {services[4].content}
+                                        </p>
+                                    </div>
+                                    <div className='flex items-center gap-2 mt-3'>
+                                        <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                            Learn More
+                                        </p>
+                                        <Image
+                                            src='/assets/learn-more.png'
+                                            width={35}
+                                            height={33}
+                                            alt='Learn More'
+                                            className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Row 3 - 3 cards */}
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8'>
+                            
+                            <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[5].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[5].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                        {services[5].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more-black.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[6].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[6].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                        {services[6].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                    />
+                                </div>
+                            </div>
+
+                            
+                            <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
+                                <div className='flex flex-col gap-2 md:gap-3'>
+                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                        <Image
+                                            src={`/assets/${services[7].icon}`}
+                                            alt="Service icon"
+                                            height={70}
+                                            width={70}
+                                            className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
+                                        />
+                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                            {services[7].title}
+                                        </h2>
+                                    </div>
+                                    <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
+                                        {services[7].content}
+                                    </p>
+                                </div>
+                                <div className='flex items-center gap-2 mt-3'>
+                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more-black.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     )
 }
+
+function StripeSection() {
+    return (
+        <section className="relative w-full  mt-20 md:mt-28 lg:mt-32">
+            
+            <div className="relative w-full flex items-center justify-center py-12 md:py-16">
+                <div 
+                    className="absolute inset-x-0 w-[120%] -left-[10%] h-[135px] bg-[#FFFFFF] shadow-lg"
+                    style={{
+                        transform: 'rotate(-5.39deg)',
+                        transformOrigin: 'center'
+                    }}
+                >
+                    
+                    <div 
+                        className="w-full h-full flex items-center justify-center gap-4 md:gap-6 lg:gap-8"
+                        
+                    >
+                        
+                        <span 
+                            className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
+                        >
+                            we ASCEND. //   from code to concept
+                        </span>
+                        
+                        {/* Logo */}
+                        <img
+                            src="/assets/header-logo.png"
+                            alt="Header Logo"
+                            className="w-[95px] h-[127px] object-contain flex-shrink-0"
+                        />
+                        
+                        {/* Second text content */}
+                        <span 
+                            className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
+                        >
+                          we ASCEND. //  from
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+
+
+function TeamSection() {
+    return (
+        <section className="relative w-full mx-auto mt-15 md:mt-28 lg:mt-30">
+            <div className="relative mx-auto w-full min-h-[500px] rounded-[50px] bg-[#1FE5FF] overflow-visible">
+                <div 
+                    className="absolute inset-0 rounded-[50px] pointer-events-none"
+                    style={{
+                        border: '2.9px solid black',
+                    }}
+                />
+                
+                
+                <div className='relative w-full p-2 md:p-12 lg:p-8 flex flex-col items-center justify-center min-h-[400px]'>
+                    
+                    <div className='flex flex-wrap items-end gap-4 md:gap-6 lg:gap-13 pb-4 md:pb-6'>
+                       
+                        <div className='bg-[#EBEBEB] rounded-[10px] px-6 md:px-8 py-4 md:py-2 -skew-x-12 flex-shrink-0 mb-2 md:mb-3 lg:mb-28'>
+                            <h2 className='skew-x-12 font-["Exo_2"] font-semibold text-2xl md:text-3xl lg:text-4xl text-black whitespace-nowrap'>
+                                MEET THE
+                            </h2>
+                        </div>
+
+                        
+                        <div className='relative flex-shrink-0'>
+                            <h1 
+                                className='font-["Exo_2"] font-semibold text-black leading-[120%]'
+                                style={{
+                                    fontSize: 'clamp(80px, 15vw, 300px)',
+                                }}
+                            >
+                                TEAM
+                            </h1>
+                            
+                           
+                            <img
+                                src="/assets/team.png"
+                                alt="Team"
+                                className='absolute top-7/8 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto object-contain pointer-events-none z-10'
+                            />
+                        </div>
+
+                        
+                        <div className='max-w-[345px] pb-2 md:pb-3 mb-18'>
+                            <p className='font-["Exo_2"] font-medium text-lg md:text-2xl lg:text-[32px] leading-[100%] text-black'>
+                                Get to know the people who make it happen.
+                            </p>
+                            <img
+                                src="/assets/team-icon.png"
+                                alt="Team Icon"
+                                className='w-23 h-25 rotate-[-48deg] object-contain'
+                            />
+                        </div>
+                    </div>
+
+                    
+                    <div className='mt-6 md:mt-8 lg:mt-10'>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+
 
 export default function App() {
     return (
@@ -504,6 +922,8 @@ export default function App() {
 
             <WhyChooseUs />
             <ServicesSection />
+            <StripeSection />
+            <TeamSection />
         </div>
     )
 }
