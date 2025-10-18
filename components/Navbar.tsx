@@ -1,89 +1,127 @@
-"use client";
-
-import Link from "next/link";
+"use client"
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
-  return (
-    <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
+    const navLinks = [
+        { href: "/", label: "Home" },
+        { href: "/services", label: "Services" },
+        { href: "/team", label: "Team" },
+        { href: "/about", label: "About" },
+    ];
+
+    const isActive = (path: string) => pathname === path;
+
+    return (
+        <>
+            <div className="absolute left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[1470px] top-8 md:top-12 lg:top-[54px] h-24 md:h-32 lg:h-[147px]">
+                <div className="w-full h-full flex items-center justify-between md:justify-evenly px-6 md:px-12 rounded-[60px] shadow-[0_0_60px_rgba(31,229,255,0.8)] bg-[#1FE5FF]">
+                    {/* Mobile: Header logo on left */}
+                    <div className="md:hidden flex items-center">
+                        <img src="/assets/logo.png" alt="Logo" className="h-16 w-auto object-contain" />
+                    </div>
+
+                    {/* Desktop: Left side navigation */}
+                    <nav className="hidden md:flex items-center gap-8 lg:gap-16 text-[#0D0D0D]">
+                        <Link
+                            className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
+                                isActive("/") ? "bg-[#12cbe3] h-14 w-36 flex items-center justify-center  text-white rounded-full " : ""
+                            }`}
+                            style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
+                            href="/"
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
+                                isActive("/services") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                            }`}
+                            style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
+                            href="/services"
+                        >
+                            Services
+                        </Link>
+                    </nav>
+
+                    {/* Desktop: Center logo */}
+                    <div className="hidden md:flex items-center justify-center">
+                        <img src="/assets/logo.png" alt="Logo" className="h-20 md:h-24 lg:h-[130px] w-auto object-contain" />
+                    </div>
+
+                    {/* Desktop: Right side navigation */}
+                    <nav className="hidden md:flex items-center gap-8 lg:gap-16 text-[#0D0D0D]">
+                        <Link
+                            className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
+                                isActive("/team") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                            }`}
+                            style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
+                            href="/team"
+                        >
+                            Team
+                        </Link>
+                        <Link
+                            className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
+                                isActive("/about") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                            }`}
+                            style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
+                            href="/about"
+                        >
+                            About
+                        </Link>
+                    </nav>
+
+                    {/* Mobile: Menu button on right */}
+                    <button
+                        className="md:hidden flex flex-col gap-1.5 p-2"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Menu"
+                    >
+                        <span className={`w-6 h-0.5 bg-[#0D0D0D] transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-[#0D0D0D] transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-[#0D0D0D] transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                    </button>
+                </div>
             </div>
-            <span className="text-xl font-bold text-[#1E3A8A]">Ascend Tech</span>
-          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-[#6B7280] hover:text-[#3B82F6] transition-colors text-sm font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Button asChild className="bg-[#3B82F6] hover:bg-[#3B82F6]/90">
-              <Link href="/contact">Get Started</Link>
-            </Button>
-          </div>
+            {/* Mobile Sidebar Menu */}
+            <div className={`fixed top-0 right-0 h-full w-64 bg-[#1FE5FF] shadow-2xl z-[60] transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+                <div className="flex flex-col h-full p-8 pt-24">
+                    <button
+                        className="absolute top-6 right-6 text-[#0D0D0D] text-2xl"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        ✕
+                    </button>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="px-4 pt-2">
-              <Button asChild className="w-full bg-[#3B82F6] hover:bg-[#3B82F6]/90">
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Get Started
-                </Link>
-              </Button>
+                    <nav className="flex flex-col gap-6 text-[#0D0D0D]">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                className={`hover:text-white transition-colors text-2xl font-normal py-2 border-b border-[#0D0D0D]/20 ${
+                                    isActive(link.href) ? "bg-[#0D0D0D] text-white rounded-lg px-4" : ""
+                                }`}
+                                style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
+                                href={link.href}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
             </div>
-          </div>
-        )}
-      </nav>
-    </header>
-  );
+
+            {/* Overlay */}
+            {isMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-black/50 z-[55] md:hidden"
+                    onClick={() => setIsMenuOpen(false)}
+                />
+            )}
+        </>
+    )
 }
-
