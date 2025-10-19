@@ -9,6 +9,8 @@ const poppins = Poppins({
   display: "swap",
 });
 
+
+
 export const metadata: Metadata = {
   title: "Ascend Tech Agency | Web & App Development Solutions",
   description: "Transform your ideas into powerful digital solutions. Ascend Tech Agency specializes in web development, app development, UI/UX design, and custom software solutions.",
@@ -26,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.variable} font-sans antialiased`}
+        className={`${poppins.variable}  font-sans antialiased`}
       >
         <Navbar />
         <main className="pt-0">

@@ -1,6 +1,22 @@
 "use client"
 import services from '@/public/services.json'
+import { Work_Sans, Exo_2 } from 'next/font/google'
 import Image from 'next/image'
+import projects from '@/public/projects.json'
+import Link from 'next/link'
+import { Button } from './ui/button'
+
+ const workSans = Work_Sans({
+    subsets:["latin"],
+    weight:["600","400"],
+    variable:"--font-work-sans"
+    })
+
+    const exo2 = Exo_2({
+    subsets:["latin"],
+    weight:["600"],
+    variable:"--font-exo-2"
+    })
 
 function Header() {
     return (
@@ -135,7 +151,7 @@ function HeroSection() {
                      style={{
                          paddingLeft: 'clamp(32px, 3vw, 64px)'
                      }}>
-                    <p className="text-black leading-tight tracking-wide" 
+                    <p className={`workSans.classname text-black leading-tight tracking-wide `} 
                        style={{
                            fontFamily: 'Work Sans, sans-serif',
                            fontSize: 'clamp(16px, 1.4vw, 28px)',
@@ -144,6 +160,7 @@ function HeroSection() {
                        }}>
                         We build exceptional <span className="font-semibold">web</span> and <span className="font-semibold">mobile applications</span>, <span className="font-semibold">custom software</span>, and design experiences, from <span className="font-semibold">branding</span> and <span className="font-semibold">UI/UX</span> to <span className="font-semibold">graphic design</span> - that drive growth and delight users.
                     </p>
+                    
                 </div>
             </div>
 
@@ -291,6 +308,8 @@ function HeroSection() {
 }
 
 function WhyChooseUs() {
+
+    
     const features = [
         'Cutting-edge technology stack',
         'Regular progress updates',
@@ -397,9 +416,9 @@ function WhyChooseUs() {
                                         flexShrink: 0
                                     }}
                                 />
-                                <span style={{
-                                    fontFamily: 'Work Sans, sans-serif',
-                                    fontWeight: 400,
+                                <span className={workSans.className} style={{
+                                    // fontFamily: 'Work Sans, sans-serif',
+                                    // fontWeight: 400,
                                     fontSize: 'clamp(18px, 1.5vw, 24px)',
                                     lineHeight: '100%',
                                     letterSpacing: '0%',
@@ -452,7 +471,7 @@ function WhyChooseUs() {
                     width: '496px',
                     height: '662px',
                     top: '0',
-                    right: '0'
+                    right: '-65px'
                 }}>
                     <img
                         src="/assets/designs3.png"
@@ -470,10 +489,26 @@ function WhyChooseUs() {
 }
 
 function ServicesSection() {
+  
     return (
         <section className="relative px-4 md:px-6 lg:px-0 mx-auto w-full mt-20 md:mt-28 lg:mt-32 xl:mt-36">
             
-            <div className="relative mx-auto w-full  min-h-[1654px] rounded-[60px] bg-[#D9D9D91A] border border-white backdrop-blur-[194.27px] shadow-[0px_4px_16.9px_0px_#00000040] p-8 md:p-12 lg:p-20 xl:p-20 overflow-hidden">
+            <div className="relative mx-auto w-full  min-h-[1530px] rounded-[60px] bg-[#D9D9D91A] border border-white backdrop-blur-[194.27px] shadow-[0px_4px_16.9px_0px_#00000040] p-8 md:p-12 lg:p-20 xl:p-20 overflow-hidden">
+               
+                
+                <div 
+                    className="absolute rounded-full pointer-events-none"
+                    style={{
+                        width: 'clamp(300px, 40vw, 565px)',
+                        height: 'clamp(300px, 40vw, 583.374755859375px)',
+                        top: 'clamp(350px, 20vw, 550px)',
+                        left: 'clamp(-150px, -10vw, -50px)',
+                        opacity: 0.50,
+                        background: '#1FE5FFBF',
+                        filter: 'blur(300px)',
+                        zIndex: 0
+                    }}
+                />
                
                 <div className="absolute flex items-center justify-center w-[60px] md:w-[90px] h-[180px] md:h-[230px] top-20 md:top-24 lg:top-28 xl:top-36 left-[5px] [writing-mode:vertical-rl] rotate-180 bg-[#1FE5FF]">
                     <p className="font-[Exo_2] font-semibold text-base md:text-lg lg:text-2xl xl:text-[28px] leading-[100%] text-center text-[#0d0d0d]">
@@ -512,7 +547,7 @@ function ServicesSection() {
                             
                             <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[0].icon}`}
                                             alt="Service icon"
@@ -520,7 +555,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                        <h2 className={`${workSans.className} text-white text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[0].title}
                                         </h2>
                                     </div>
@@ -545,7 +580,7 @@ function ServicesSection() {
                             
                             <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[1].icon}`}
                                             alt="Service icon"
@@ -553,7 +588,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                         <h2 className={`${workSans.className} text-black text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[1].title}
                                         </h2>
                                     </div>
@@ -578,7 +613,7 @@ function ServicesSection() {
                             
                             <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[2].icon}`}
                                             alt="Service icon"
@@ -586,7 +621,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                        <h2 className={`${workSans.className} text-white text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[2].title}
                                         </h2>
                                     </div>
@@ -615,7 +650,7 @@ function ServicesSection() {
                                 
                                 <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] backdrop-blur-[30px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                     <div className='flex flex-col gap-2 md:gap-3'>
-                                        <div className='flex gap-3 md:gap-4 items-start'>
+                                        <div className='flex gap-3 md:gap-4 items-center'>
                                             <Image
                                                 src={`/assets/${services[3].icon}`}
                                                 alt="Service icon"
@@ -623,9 +658,9 @@ function ServicesSection() {
                                                 width={70}
                                                 className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                             />
-                                            <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
-                                                {services[3].title}
-                                            </h2>
+                                             <h2 className={`${workSans.className} text-black text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
+                                            {services[3].title}
+                                        </h2>
                                         </div>
                                         <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
                                             {services[3].content}
@@ -648,7 +683,7 @@ function ServicesSection() {
                                 
                                 <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                     <div className='flex flex-col gap-2 md:gap-3'>
-                                        <div className='flex gap-3 md:gap-4 items-start'>
+                                        <div className='flex gap-3 md:gap-4 items-center'>
                                             <Image
                                                 src={`/assets/${services[4].icon}`}
                                                 alt="Service icon"
@@ -656,9 +691,9 @@ function ServicesSection() {
                                                 width={70}
                                                 className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                             />
-                                            <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
-                                                {services[4].title}
-                                            </h2>
+                                             <h2 className={`${workSans.className} text-white text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
+                                            {services[4].title}
+                                        </h2>
                                         </div>
                                         <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
                                             {services[4].content}
@@ -685,7 +720,7 @@ function ServicesSection() {
                             
                             <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[5].icon}`}
                                             alt="Service icon"
@@ -693,7 +728,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                         <h2 className={`${workSans.className} text-black text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[5].title}
                                         </h2>
                                     </div>
@@ -717,7 +752,7 @@ function ServicesSection() {
 
                             <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[6].icon}`}
                                             alt="Service icon"
@@ -725,7 +760,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-white font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                        <h2 className={`${workSans.className} text-white text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[6].title}
                                         </h2>
                                     </div>
@@ -750,7 +785,7 @@ function ServicesSection() {
                             
                             <div className='shadow-[0_0_25px_rgba(31,229,255,0.5)] w-full max-w-full rounded-[25px] bg-[#1FE5FF] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
                                 <div className='flex flex-col gap-2 md:gap-3'>
-                                    <div className='flex gap-3 md:gap-4 items-start'>
+                                    <div className='flex gap-3 md:gap-4 items-center'>
                                         <Image
                                             src={`/assets/${services[7].icon}`}
                                             alt="Service icon"
@@ -758,7 +793,7 @@ function ServicesSection() {
                                             width={70}
                                             className='flex-shrink-0 w-[70px] h-[70px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px]'
                                         />
-                                        <h2 className='text-black font-["Work_Sans"] text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1'>
+                                        <h2 className={`${workSans.className} text-black text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[100%] flex-1`}>
                                             {services[7].title}
                                         </h2>
                                     </div>
@@ -858,7 +893,7 @@ function TeamSection() {
                         
                         <div className='relative flex-shrink-0'>
                             <h1 
-                                className='font-["Exo_2"] font-semibold text-black leading-[120%]'
+                                className={`${exo2.className} font-semibold text-black leading-[120%]`}
                                 style={{
                                     fontSize: 'clamp(80px, 15vw, 300px)',
                                 }}
@@ -870,7 +905,7 @@ function TeamSection() {
                             <img
                                 src="/assets/team.png"
                                 alt="Team"
-                                className='absolute top-7/8 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto object-contain pointer-events-none z-10'
+                                className='absolute top-15/16 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto object-contain pointer-events-none z-10'
                             />
                         </div>
 
@@ -899,6 +934,175 @@ function TeamSection() {
 
 
 
+
+function Projects(){
+    return (
+        <section className="relative w-full px-4 md:px-6 lg:px-8 mt-20 md:mt-28 lg:mt-32 ">
+            
+            <div 
+                className="absolute rounded-full pointer-events-none"
+                style={{
+                    width: 'clamp(500px, 75vw, 1077.5px)',
+                    height: 'clamp(350px, 45vw, 652.2865600585938px)',
+                    bottom: 'clamp(-200px, -15vw, -100px)',
+                    left: 'clamp(200px, 50vw, 779.5px)',
+                    opacity: 0.5,
+                    background: '#1FE5FF',
+                    filter: 'blur(300px)',
+                    zIndex: 0
+                }}
+            />
+            
+            <div className="max-w-8xl mx-auto relative z-10">
+                
+                <div className="flex flex-col items-center gap-6 mb-8 md:mb-12 lg:mb-15">
+                  
+
+                    <div className='flex flex-row items-center'>
+
+                          <div className="relative w-[clamp(70px,8vw,109px)] h-[clamp(70px,8vw,109px)]">
+                        <Image
+                            src="/assets/sparkles.png"
+                            fill
+                            alt="Sparkles decoration"
+                            className="object-contain"
+                        />
+                        </div>
+                         <h2 
+                        className={`${exo2.className} text-center text-[#FFFFFF]`}
+                        style={{
+                            maxWidth: '526px',
+                            fontSize: 'clamp(36px, 5vw, 64px)',
+                            fontWeight: 600,
+                            lineHeight: '1.2'
+                        }}
+                    >
+                        Featured Projects
+                    </h2>
+                    </div>
+                   
+                    
+                   
+                    <p 
+                        className={`${workSans.className} text-center text-white`}
+                        style={{
+                            maxWidth: '1290px',
+                            fontSize: 'clamp(20px, 2.5vw, 32px)',
+                            fontWeight: 500,
+                            lineHeight: '1.2'
+                        }}
+                    >
+                        Explore our recent work and see how we&apos;ve helped businesses achieve their goals
+                    </p>
+                </div>
+
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-5 lg:gap-5">
+                    {projects.map((project, index) => (
+                        <div 
+                            key={index}
+                            className="relative rounded-[30px] bg-[#1FE5FF] p-6 md:p-8 flex flex-col gap-2"
+                            style={{
+                                maxWidth: '503px',
+                                minHeight: '580px',
+                                boxShadow: '0px 4px 100px 73px #00000094 inset',
+                                margin: '0 auto'
+                            }}
+                        >
+                            
+                            <div className="relative w-full max-w-[415px] h-[310px] mx-auto">
+                                <Image
+                                    src={`/assets/${project.image}`}
+                                    fill
+                                    alt={project.title}
+                                    className="object-cover rounded-lg"
+                                />
+                                
+                               
+                                <div 
+                                    className={`${workSans.className} absolute top-3 left-3 bg-[#1FE5FF] text-black rounded-[50px] px-4 py-1.5 text-sm`}
+                                    style={{
+                                        maxWidth: '115px',
+                                        height: '31px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}
+                                >
+                                    {project.tag}
+                                </div>
+                            </div>
+
+                           
+                            <div className="flex flex-col gap-3 max-w-[415px] mx-auto w-full">
+                                
+                                <h3 
+                                    className={`${workSans.className} text-black`}
+                                    style={{
+                                        fontSize: 'clamp(22px, 2vw, 28px)',
+                                        fontWeight: 600,
+                                        lineHeight: '1.2'
+                                    }}
+                                >
+                                    {project.title}
+                                </h3>
+
+                               
+                                <p 
+                                    className={`${workSans.className} text-black`}
+                                    style={{
+                                        fontSize: 'clamp(14px, 1.2vw, 16px)',
+                                        fontWeight: 400,
+                                        lineHeight: '1.5',
+                                        minHeight: '95px'
+                                    }}
+                                >
+                                    {project.content}
+                                </p>
+
+                                <Link href='#'>
+                                <div className="flex items-center gap-2 mt-auto">
+                                    <span 
+                                        className={`${workSans.className} text-black`}
+                                        style={{
+                                            fontSize: 'clamp(14px, 1.2vw, 16px)',
+                                            fontWeight: 500
+                                        }}
+                                    >
+                                        View Case Study
+                                    </span>
+                                    <div className="relative w-[34px] h-[32px] flex-shrink-0">
+                                        <Image
+                                            src="/assets/learn-more-black.png"
+                                            fill
+                                            alt="arrow"
+                                            className="object-contain rotate-180"
+                                        />
+                                    </div>
+                                </div>
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className='flex justify-center items-center w-full h-20 mt-15'>
+                    <Link href='#'>
+                    <Button className={` ${workSans.className} w-81 h-19 bg-transparent text-[#EBEBEB] border-[4px] text-2xl rounded-3xl`}>View All Projects <Image 
+                        src="/assets/arrow.png"
+                        height={30}
+                        width={35}
+                        alt='arrow'
+                    /> </Button>
+                    </Link>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+
+
+
 export default function App() {
     return (
         <div className="overflow-x-hidden " style={{
@@ -924,6 +1128,7 @@ export default function App() {
             <ServicesSection />
             <StripeSection />
             <TeamSection />
+            <Projects />
         </div>
     )
 }

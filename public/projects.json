@@ -1,0 +1,20 @@
+[
+    {
+    "title": "Mystry Message",
+    "content": "Modern, high-performance websites and full-stack apps built for scalability and speed.",
+    "image":"team.png",
+    "tag":"social"
+  },
+  {
+    "title": "Taskly",
+    "content": "Seamlessly connect APIs, automation tools, and custom workflows to supercharge your business.",
+    "image":"team.png",
+    "tag":"social"
+  },
+  {
+    "title":"DevConnect",
+    "content":"Native-quality mobile apps that feel right at home on every device.",
+    "image":"team.png",
+    "tag":"dev"
+  }
+]
