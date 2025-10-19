@@ -1,5 +1,20 @@
 import Link from "next/link";
 import { Mail, Phone, Linkedin, Twitter, Github } from "lucide-react";
+import { Work_Sans, Exo_2 } from 'next/font/google'
+
+
+const workSans = Work_Sans({
+    subsets:["latin"],
+    weight:["600","400","500","300"],
+    variable:"--font-work-sans"
+    })
+
+const exo2 = Exo_2({
+    subsets:["latin"],
+    weight:["600","300"],
+    variable:"--font-exo-2"
+    })
+
 
 const footerLinks = {
   services: [
@@ -22,42 +37,31 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E3A8A] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-bold">Ascend Tech</span>
-            </Link>
-            <p className="text-gray-300 text-sm">
-              Transform your ideas into powerful digital solutions. Building the future, one project at a time.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-[#3B82F6] transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-[#3B82F6] transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-[#3B82F6] transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
+    <footer className={`${workSans.className} bg-[#1FE5FF] text-black w-[95%] mx-auto rounded-3xl mt-20`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-12">
+        
+        <div className="flex items-center justify-between mb-12">
+          <Link href="/" className="flex items-center space-x-2 -ml-55">
+            <div className="w-130 h-25 rounded-lg flex items-center justify-center">
+              <img src="/assets/logo.png" alt="logo" className="w-full h-full object-contain" />
             </div>
-          </div>
+          </Link>
+          <p className={`font-light text-black text-xl max-w-lg text-right`}>
+            Transform your ideas into powerful digital solutions. Building the future, one project at a time.
+          </p>
+        </div>
 
+       
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-semibold text-lg mb-4 font-medium">Services</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[#3B82F6] transition-colors text-sm"
+                    className="text-black hover:text-[#3B82F6] transition-colors text-md font-light"
                   >
                     {link.name}
                   </Link>
@@ -68,13 +72,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Company</h3>
+            <h3 className="font-semibold text-lg mb-4 font-medium">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[#3B82F6] transition-colors text-sm"
+                    className="text-black hover:text-[#3B82F6] transition-colors text-md font-light"
                   >
                     {link.name}
                   </Link>
@@ -85,12 +89,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+            <h3 className="font-semibold text-lg mb-4 font-medium">Contact</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:hello@ascendtech.agency"
-                  className="flex items-center text-gray-300 hover:text-[#3B82F6] transition-colors text-sm"
+                  className="flex items-center text-black hover:text-[#3B82F6] transition-colors text-md font-light"
                 >
                   <Mail className="h-4 w-4 mr-2" />
                   hello@ascendtech.agency
@@ -99,19 +103,30 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+1234567890"
-                  className="flex items-center text-gray-300 hover:text-[#3B82F6] transition-colors text-sm"
+                  className="flex items-center text-black hover:text-[#3B82F6] transition-colors text-md font-light"
                 >
                   <Phone className="h-4 w-4 mr-2" />
                   +1 (234) 567-890
                 </a>
               </li>
             </ul>
+             <div className="flex space-x-4 mt-4 ">
+              <a href="#" className="text-black hover:text-[#3B82F6] transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-black hover:text-[#3B82F6] transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-black hover:text-[#3B82F6] transition-colors">
+                <Github className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-black text-sm">
             © {new Date().getFullYear()} Ascend Tech Agency. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
@@ -119,7 +134,7 @@ export default function Footer() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-400 hover:text-[#3B82F6] transition-colors text-sm"
+              className="text-black hover:text-[#3B82F6] transition-colors text-sm"
             >
               {link.name}
             </Link>

@@ -1,0 +1,26 @@
+[
+    {   "id":"1",
+        "question":"What types of projects does Ascend Tech specialize in?",
+        "answer":"Ascend Tech specializes in web and mobile application development, custom software solutions, and UI/UX design."
+    },
+     {  "id":"2",
+        "question":"How long does a typical project take from start to finish?",
+        "answer":"Ascend Tech specializes in web and mobile application development, custom software solutions, and UI/UX design."
+    },
+      {
+        "id":"3",
+        "question":"What is your development process and how involved will I be?",
+        "answer":"Ascend Tech specializes in web and mobile application development, custom software solutions, and UI/UX design."
+    },
+      {
+        "id":"4",   
+        "question":"Do you provide ongoing support and maintainence after launch?",
+
+        "answer":"Ascend Tech specializes in web and mobile application development, custom software solutions, and UI/UX design."
+    },
+      {
+        "id":"5",
+        "question":"What is the typical cost range for your services?",
+        "answer":"Ascend Tech specializes in web and mobile application development, custom software solutions, and UI/UX design."
+    }
+]

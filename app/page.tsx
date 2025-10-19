@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import Home from "@/components/Homepage";
 
-import { log } from "console";
+
 
 export const metadata: Metadata = {
   title: "Ascend Tech Agency | Web & App Development Solutions",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
       <Home/>
+      
   )
 
 }

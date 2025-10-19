@@ -5,6 +5,10 @@ import Image from 'next/image'
 import projects from '@/public/projects.json'
 import Link from 'next/link'
 import { Button } from './ui/button'
+import CarouselSize from './Carousel'
+import FAQItem from './FAQItem'
+
+
 
  const workSans = Work_Sans({
     subsets:["latin"],
@@ -822,13 +826,14 @@ function ServicesSection() {
     )
 }
 
+
+
 function StripeSection() {
     return (
-        <section className="relative w-full  mt-20 md:mt-28 lg:mt-32">
-            
+        <section className="relative w-full mt-20 md:mt-28 lg:mt-32">
             <div className="relative w-full flex items-center justify-center py-12 md:py-16">
                 <div 
-                    className="absolute inset-x-0 w-[120%] -left-[10%] h-[135px] bg-[#FFFFFF] shadow-lg"
+                    className="absolute inset-x-0 w-[120%] -left-[10%] h-[135px] bg-[#FFFFFF] shadow-lg overflow-hidden"
                     style={{
                         transform: 'rotate(-5.39deg)',
                         transformOrigin: 'center'
@@ -836,36 +841,61 @@ function StripeSection() {
                 >
                     
                     <div 
-                        className="w-full h-full flex items-center justify-center gap-4 md:gap-6 lg:gap-8"
-                        
+                        className="w-full h-full flex items-center gap-8 animate-scroll-stripe"
                     >
                         
-                        <span 
-                            className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
-                        >
-                            we ASCEND. //   from code to concept
-                        </span>
-                        
-                        {/* Logo */}
-                        <img
-                            src="/assets/header-logo.png"
-                            alt="Header Logo"
-                            className="w-[95px] h-[127px] object-contain flex-shrink-0"
-                        />
-                        
-                        {/* Second text content */}
-                        <span 
-                            className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
-                        >
-                          we ASCEND. //  from
-                        </span>
+                        {[...Array(2)].map((_, index) => (
+                            <div key={index} className="flex items-center gap-8 flex-shrink-0">
+                                <span 
+                                    className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
+                                >
+                                    we ASCEND. // from code to concept
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[95px] h-[127px] object-contain flex-shrink-0"
+                                />
+                                
+                                <span 
+                                    className="font-[Exo_2] font-bold text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap"
+                                >
+                                    we ASCEND. // from idea to impact
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[95px] h-[127px] object-contain flex-shrink-0"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
+            
+            <style jsx>{`
+                @keyframes scroll-stripe {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                
+                .animate-scroll-stripe {
+                    animation: scroll-stripe 25s linear infinite;
+                }
+                
+                .animate-scroll-stripe:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
         </section>
     )
 }
-
 
 
 function TeamSection() {
@@ -1101,17 +1131,192 @@ function Projects(){
 }
 
 
+function ClientReviews() {
+
+    
+    return (
+        <section className='mt-40 relative'>
+           
+            <div 
+                className="absolute rounded-full pointer-events-none"
+                style={{
+                    width: 'clamp(400px, 35vw, 513px)',
+                    height: 'clamp(400px, 35vw, 512px)',
+                    bottom: 'clamp(-100px, -5vw, -80px)',
+                    left: 'clamp(-100px, -5vw, -80px)',
+                    opacity: 0.3,
+                    background: '#1FE5FF',
+                    filter: 'blur(300px)',
+                    zIndex: 0
+                }}
+            />
+            
+            
+            <div 
+                className="absolute rounded-full pointer-events-none"
+                style={{
+                    width: 'clamp(400px, 35vw, 513px)',
+                    height: 'clamp(400px, 35vw, 512px)',
+                    bottom: 'clamp(-260px, -15vw, -240px)',
+                    right: 'clamp(-100px, -5vw, -80px)',
+                    opacity: 0.3,
+                    background: '#1FE5FF',
+                    filter: 'blur(300px)',
+                    zIndex: 0
+                }}
+            />
+            
+            <div className='flex flex-col items-center justify-center p-4 relative z-10'>
+                <div className='w-160 h-20 bg-[#1FE5FF] flex justify-center p-1 mb-9 rounded-2xl '>
+                <h2 className={`${exo2.className} text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-6 md:mb-8 lg:mb-10`}>
+                    What our clients say:
+                </h2>
+                </div>
+                <p className={` ${workSans.className} text-white text-3xl mb-25` }>Don&apos;t just take our word for it - hear from businesses we&apos;ve helped succeed</p>
+                <CarouselSize/>
+                
+                
+                <div 
+                    className="w-full max-w-[1369px] h-[242px] mt-20 rounded-[25px] relative overflow-hidden bg-[#FFFFFF1A] border border-white backdrop-blur-[194.27px] "
+                    
+                >
+                   
+                    <div  className='grid grid-cols-4 gap-3 w-full h-full items-center justify-center p-5 '>
+
+                        <div className='flex flex-col col-span-1 items-center text-center  text-white text-2xl'>
+                            <h1 className='font-bold text-4xl'>500<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <p>Satisfied Clients</p>
+                        </div>
+
+                        <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl'>
+                            <h1 className='font-bold text-4xl'>5<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <p>Years of experience</p>
+                        </div>
+
+                        <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl' >
+                            <h1 className='font-bold text-4xl'>100<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <p>Projects Delivered</p>
+                        </div>
+
+                        <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl mt-4'>
+                            <h1 className='font-bold text-4xl'>5<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <p>Lines of code & </p>
+                            <p>Creative pixels</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+
+
+
+
+function SecondStripe(){
+    return (
+        <section className="relative w-full mt-20 md:mt-24 lg:mt-27">
+            <div className="relative w-full flex items-center justify-center py-12 md:py-16">
+                <div 
+                    className="absolute inset-x-0 w-[120%] -left-[10%] h-[96px] bg-[#FFFFFF] shadow-lg overflow-hidden"
+                    style={{
+                        transformOrigin: 'center'
+                    }}
+                >
+                   
+                    <div 
+                        className="w-full h-full flex items-center gap-8 animate-scroll-x"
+                    >
+                        
+                        {[...Array(2)].map((_, index) => (
+                            <div key={index} className="flex items-center gap-8 flex-shrink-0">
+                                <span className="font-[Exo_2] font-bold text-5xl md:text-5xl lg:text-6xl xl:text-[64px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap">
+                                    App Dev
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[49px] h-[65px] object-contain flex-shrink-0"
+                                />
+                                
+                                <span className="font-[Exo_2] font-bold text-5xl md:text-5xl lg:text-6xl xl:text-[64px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap">
+                                    User Research
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[49px] h-[65px] object-contain flex-shrink-0"
+                                />
+                                
+                                <span className="font-[Exo_2] font-bold text-5xl md:text-5xl lg:text-6xl xl:text-[64px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap">
+                                    Interface Design
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[49px] h-[65px] object-contain flex-shrink-0"
+                                />
+                                
+                                <span className="font-[Exo_2] font-bold text-5xl md:text-5xl lg:text-6xl xl:text-[64px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap">
+                                    Web3
+                                </span>
+                                
+                                <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[49px] h-[65px] object-contain flex-shrink-0"
+                                />
+                                
+                                <span className="font-[Exo_2] font-bold text-5xl md:text-5xl lg:text-6xl xl:text-[64px] leading-none tracking-normal text-[#0d0d0d] whitespace-nowrap">
+                                    SEO
+                                </span>
+                                 <img
+                                    src="/assets/header-logo.png"
+                                    alt="Header Logo"
+                                    className="w-[49px] h-[65px] object-contain flex-shrink-0"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            
+            <style jsx>{`
+                @keyframes scroll-x {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                
+                .animate-scroll-x {
+                    animation: scroll-x 20s linear infinite;
+                }
+                
+                .animate-scroll-x:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
+        </section>
+    )
+}
 
 
 export default function App() {
     return (
         <div className="overflow-x-hidden " style={{
-            minHeight: '11096px',
+            // minHeight: '11096px',
             position: 'relative'
         }}>
-            {/* Hero wrapper with gradient background */}
+            
             <div className="w-full relative" style={{
-                minHeight: 'clamp(900px, 100vw, 1050px)',
+                // minHeight: 'clamp(900px, 100vw, 1050px)',
                 marginTop: '0',
                 borderBottomRightRadius: 'clamp(100px, 12vw, 200px)',
                 borderBottomLeftRadius: 'clamp(100px, 12vw, 200px)',
@@ -1129,6 +1334,9 @@ export default function App() {
             <StripeSection />
             <TeamSection />
             <Projects />
+            <ClientReviews />
+            <SecondStripe/>
+            <FAQItem/>
         </div>
     )
 }
