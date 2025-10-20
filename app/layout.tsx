@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   title: "Ascend Tech Agency | Web & App Development Solutions",
   description: "Transform your ideas into powerful digital solutions. Ascend Tech Agency specializes in web development, app development, UI/UX design, and custom software solutions.",
   keywords: ["web development", "app development", "UI/UX design", "custom software", "tech agency"],
+  icons: {
+    icon: 'assets/header-logo.ico',
+    apple: '/assets/header-logo.ico',
+  }
 };
 
 import Navbar from "@/components/Navbar";
@@ -27,6 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1.0" />
+      </head>
       <body
         className={`${poppins.variable}  font-sans antialiased`}
       >

@@ -24,7 +24,7 @@ import FAQItem from './FAQItem'
 
 function Header() {
     return (
-        <header className="relative px-4 md:px-8 mt-44 md:mt-52 lg:mt-[265px]">
+        <header className="relative px-4 md:px-0 ml-7 mt-44 md:mt-52 lg:mt-[265px]">
             {/* Header container */}
             <div className="relative w-full mx-auto"
                  style={{
@@ -32,9 +32,9 @@ function Header() {
                      minHeight: 'clamp(150px, 15vw, 217px)'
                  }}>
                 {/* Header logo positioned vertically */}
-                <div className="absolute z-10 hidden md:block"
+                <div className="absolute z-10 hidden md:block ml-20"
                      style={{
-                         left: 'clamp(0px, 1%, 24px)',
+                        //  left: 'clamp(0px, 1%, 24px)',
                          top: '0'
                      }}>
                     <img
@@ -42,7 +42,8 @@ function Header() {
                         alt="Header Logo"
                         style={{
                             width: 'clamp(64px, 6vw, 120px)',
-                            height: 'auto'
+                            height: 'auto',
+                            transform:'scale(1.1)'
                         }}
                         className="object-contain"
                     />
@@ -91,7 +92,7 @@ function Header() {
 
 function HeroSection() {
     return (
-        <section className="relative px-4 " style={{minHeight: 'clamp(800px, 85vw, 1070px)', paddingBottom: '100px', marginTop:'-120px'}}>
+        <section className="relative px-4 " style={{minHeight: 'clamp(680px, 85vw, 950px)', paddingBottom: '100px', marginTop:'-190px'}}>
             {/* Mobile Layout - Stacked vertically */}
             <div className="md:hidden flex flex-col items-center pt-8 gap-6">
                 {/* Subtext-1 for mobile */}
@@ -112,9 +113,9 @@ function HeroSection() {
                 </div>
 
                 {/* Hero img for mobile */}
-                <div className="w-70 h-65">
+                <div className="w-65 h-60">
                     <img
-                        src="/assets/hero-img.png"
+                        src="/assets/hero-img-1.png"
                         alt="Hero"
                         className="w-full h-full object-contain"
                     />
@@ -143,7 +144,7 @@ function HeroSection() {
                 <img
                     src="/assets/three-line.png"
                     alt="Decoration"
-                    className="absolute rotate-[9.23deg] top-0 left-0"
+                    className="absolute rotate-[-9deg] -top-12 left-0"
                     style={{
                         width: 'clamp(48px, 3.5vw, 71px)',
                         height: 'auto'
@@ -151,7 +152,7 @@ function HeroSection() {
                 />
 
                 {/* Content part */}
-                <div className="pt-12 md:pt-[42px]"
+                <div className="-pt-17 "
                      style={{
                          paddingLeft: 'clamp(32px, 3vw, 64px)'
                      }}>
@@ -169,20 +170,20 @@ function HeroSection() {
             </div>
 
             {/* Hero img */}
-            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-24 md:top-28 lg:top-[100px]"
+            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-24 md:top-28 lg:top-[100px] ml-4"
                  style={{
                      width: 'clamp(600px, 52vw, 1000px)',
                      height: 'clamp(600px, 52vw, 1000px)'
                  }}>
                 <img
-                    src="/assets/hero-image.png"
+                    src="/assets/hero-image1.png"
                     alt="Hero"
-                    className="w-full h-full object-contain"
+                    className="w-full h-[90%] object-contain"
                 />
             </div>
 
             {/* 5 stars imgs */}
-            <div className="absolute hidden md:flex gap-2 top-60 md:top-72 lg:top-[373px]"
+            <div className="absolute hidden md:flex gap-2 top-60 md:top-72 lg:top-99 lg:mr-10"
                  style={{
                      right: 'clamp(16px, 5%, 80px)',
                      maxWidth: 'min(250px, 18vw)'
@@ -198,7 +199,7 @@ function HeroSection() {
             </div>
 
             {/* Subtext-2 */}
-            <div className="absolute hidden md:block top-72 md:top-80 lg:top-[426px]"
+            <div className="absolute hidden md:block top-72 md:top-80 lg:top-114 lg:mr-10"
                  style={{
                      right: 'clamp(16px, 5%, 80px)',
                      maxWidth: 'clamp(280px, 20vw, 360px)'
@@ -215,7 +216,7 @@ function HeroSection() {
             </div>
 
             {/* Subtext-3 */}
-            <div className="absolute hidden md:block top-96 md:top-[400px] lg:top-[591px]"
+            <div className="absolute hidden md:block top-96 md:top-[400px] lg:top-147 lg:mr-16"
                  style={{
                      right: 'clamp(16px, 3%, 60px)',
                      maxWidth: 'clamp(300px, 22vw, 420px)'
@@ -231,7 +232,7 @@ function HeroSection() {
             </div>
 
             {/* Sparkle img */}
-            <div className="absolute hidden lg:block top-[450px] md:top-[500px] lg:top-[656px]"
+            <div className="absolute hidden lg:block top-[450px] md:top-[500px] lg:top-164 lg:mr-16"
                  style={{
                      right: 'clamp(8px, 1%, 40px)',
                      width: 'clamp(80px, 6vw, 109px)',
@@ -248,28 +249,28 @@ function HeroSection() {
             <div className="absolute left-1/2 -translate-x-1/2 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-around px-0 md:px-10 bg-transparent md:bg-[#0D0D0D87] md:backdrop-blur-[44.4px] md:rounded-[100px]" style={{
                 width: 'clamp(320px, 90%, 712px)',
                 minHeight: 'clamp(auto, 7.5vw, 115px)',
-                top: 'clamp(550px, 54vw, 843px)',
+                top: 'clamp(390px, 54vw, 690px)',
                 padding: '20px'
             }}>
                 {/* First button wrapper */}
-                <div style={{
+                <div className=' bg-[#1FE5FF] hover:bg-[#A7F2FC] transition-colors duration-300'  style={{
                     width: 'clamp(250px, 100%, 302px)',
                     height: 'clamp(60px, 5vw, 77px)',
                     borderRadius: '100px',
-                    backgroundColor: '#1FE5FF',
+                    
                     boxShadow: '0px 0px 44.4px 0px #000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
-                    <button style={{
+                    <button   style={{
                         fontFamily: 'Work Sans, sans-serif',
                         fontWeight: 500,
                         fontSize: 'clamp(18px, 1.8vw, 28px)',
                         lineHeight: '100%',
                         letterSpacing: '0%',
                         color: '#000000',
-                        background: 'transparent',
+                        // background: 'transparent',
                         border: 'none',
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
@@ -280,7 +281,7 @@ function HeroSection() {
                 </div>
 
                 {/* Second button wrapper */}
-                <div style={{
+                <div className='hover:bg-[#292D2E] transition-colors duration-300' style={{
                     width: 'clamp(250px, 100%, 302px)',
                     height: 'clamp(60px, 5vw, 77px)',
                     borderRadius: '100px',
@@ -297,7 +298,7 @@ function HeroSection() {
                         lineHeight: '100%',
                         letterSpacing: '0%',
                         color: '#FFFFFF',
-                        background: 'transparent',
+                        // background: 'transparent',
                         border: 'none',
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
@@ -310,6 +311,7 @@ function HeroSection() {
         </section>
     )
 }
+
 
 function WhyChooseUs() {
 
@@ -324,10 +326,8 @@ function WhyChooseUs() {
     ];
 
     return (
-        <section className="relative px-4 md:px-17 mx-auto md:mx-0 " style={{
+        <section className="relative w-full px-4 md:px-8 lg:px-12 xl:px-16" style={{
             marginTop: 'clamp(100px, 10vw, 143px)',
-            marginLeft: 'clamp(0px, 0vw, 121px)',
-            maxWidth: '1509px'
         }}>
             {/* Glow effect 1 */}
             <div className="absolute rounded-full" style={{
@@ -336,7 +336,7 @@ function WhyChooseUs() {
                 top: '134px',
                 left: '-50px',
                 backgroundColor: '#1FE5FFBF',
-                filter: 'blur(300px)',
+                filter: 'blur(200px)',
                 pointerEvents: 'none',
                 zIndex: 0
             }} />
@@ -346,146 +346,146 @@ function WhyChooseUs() {
                 width: '513px',
                 height: '512px',
                 top: '590px',
-                left: '1075px',
+                right: '-50px',
                 backgroundColor: '#1FE5FFBF',
-                filter: 'blur(300px)',
+                filter: 'blur(200px)',
                 opacity: 0.55,
                 pointerEvents: 'none',
                 zIndex: 0
             }} />
 
-            {/* Main container */}
-            <div className="relative" style={{
-                width: '100%',
+            {/* Main container - centered with max-width */}
+            <div className="relative mx-auto" style={{
                 maxWidth: '1509px',
-                minHeight: '662px',
-                zIndex: 1
+                width: '100%',
             }}>
-                {/* Text section */}
-                <div style={{
-                    maxWidth: '976px',
-                    minHeight: '626px'
+                <div className="relative flex items-center justify-between" style={{
+                    width: '100%',
+                    minHeight: '662px',
+                    zIndex: 1
                 }}>
-                    {/* Heading */}
-                    <h2 className="text-center md:text-left" style={{
-                        fontFamily: 'Exo 2, sans-serif',
-                        fontWeight: 600,
-                        fontSize: 'clamp(36px, 4vw, 64px)',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        color: '#FFFFFF',
-                        marginBottom: 'clamp(30px, 3vw, 65px)',
-                        marginLeft: '0px'
+                    {/* Text section */}
+                    <div  style={{
+                        minHeight: '626px'
+                    
                     }}>
-                        Why Choose Ascend Tech?
-                    </h2>
-
-                    {/* Description container */}
-                    <div className="text-center md:text-left mx-auto md:mx-0" style={{
-                        maxWidth: '900px',
-                        minHeight: '200px',
-                        borderRadius: '100px',
-                        marginLeft: '0px',
-                        marginBottom: 'clamp(30px, 3vw, 67px)'
-                    }}>
-                        <p style={{
-                            fontFamily: 'Work Sans, sans-serif',
-                            fontWeight: 500,
-                            fontSize: 'clamp(20px, 2vw, 32px)',
+                        {/* Heading */}
+                        <h2 className="text-center md:text-left" style={{
+                            fontFamily: 'Exo 2, sans-serif',
+                            fontWeight: 600,
+                            fontSize: 'clamp(36px, 4vw, 64px)',
                             lineHeight: '100%',
                             letterSpacing: '0%',
-                            color: '#ffffff'
+                            color: '#FFFFFF',
+                            marginBottom: 'clamp(30px, 3vw, 65px)',
                         }}>
-                            We combine technical excellence with creative innovation to deliver solutions that exceed expectations. Our collaborative approach ensures your vision becomes reality.
-                        </p>
-                    </div>
+                            Why Choose Ascend Tech?
+                        </h2>
 
-                    {/* Features grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{
-                        maxWidth: '950px',
-                        marginBottom: 'clamp(30px, 3vw, 63px)'
-                    }}>
-                        {features.map((feature, index) => (
-                            <div key={index} className="flex items-center gap-4" style={{
-                                maxWidth: '359px',
-                                minHeight: '56px'
+                        {/* Description container */}
+                        <div className="text-center md:text-left mx-auto md:mx-0" style={{
+                            maxWidth: '900px',
+                            minHeight: '200px',
+                            borderRadius: '100px',
+                            marginBottom: 'clamp(30px, 3vw, 67px)'
+                        }}>
+                            <p style={{
+                                fontFamily: 'Work Sans, sans-serif',
+                                fontWeight: 500,
+                                fontSize: 'clamp(20px, 2vw, 32px)',
+                                lineHeight: '100%',
+                                letterSpacing: '0%',
+                                color: '#ffffff'
                             }}>
-                                <img
-                                    src="/assets/checkbox.png"
-                                    alt="check"
-                                    style={{
-                                        width: '65px',
-                                        height: '55px',
-                                        objectFit: 'contain',
-                                        flexShrink: 0
-                                    }}
-                                />
-                                <span className={workSans.className} style={{
-                                    // fontFamily: 'Work Sans, sans-serif',
-                                    // fontWeight: 400,
-                                    fontSize: 'clamp(18px, 1.5vw, 24px)',
-                                    lineHeight: '100%',
-                                    letterSpacing: '0%',
-                                    color: '#ffffff'
+                                We combine technical excellence with creative innovation to deliver solutions that exceed expectations. Our collaborative approach ensures your vision becomes reality.
+                            </p>
+                        </div>
+
+                        {/* Features grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{
+                            maxWidth: '950px',
+                            marginBottom: 'clamp(30px, 3vw, 63px)'
+                        }}>
+                            {features.map((feature, index) => (
+                                <div key={index} className="flex items-center gap-4" style={{
+                                    maxWidth: '359px',
+                                    minHeight: '56px'
                                 }}>
-                  {feature}
+                                    <img
+                                        src="/assets/checkbox.png"
+                                        alt="check"
+                                        style={{
+                                            width: '65px',
+                                            height: '55px',
+                                            objectFit: 'contain',
+                                            flexShrink: 0
+                                        }}
+                                    />
+                                    <span className={workSans.className} style={{
+                                        fontSize: 'clamp(18px, 1.5vw, 24px)',
+                                        lineHeight: '100%',
+                                        letterSpacing: '0%',
+                                        color: '#ffffff'
+                                    }}>
+                      {feature}
+                    </span>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Button */}
+                        <div className="mx-auto md:mx-0 " style={{
+                            width: 'clamp(300px, 100%, 400px)',
+                            height: 'clamp(65px, 5vw, 78.62px)',
+                            borderRadius: '100px',
+                            backgroundColor: '#1FE5FF',
+                            boxShadow: '0px 0px 44.4px 0px #000000',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '15px',
+                            cursor: 'pointer'
+                        }}>
+                <span style={{
+                    fontFamily: 'Work Sans, sans-serif',
+                    fontWeight: 500,
+                    fontSize: 'clamp(20px, 1.8vw, 28px)',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    color: '#000000'
+                }}>
+                  Learn more about us
                 </span>
-                            </div>
-                        ))}
+                            <img
+                                src="/assets/next.png"
+                                alt="next"
+                                style={{
+                                    width: '52px',
+                                    height: '50px',
+                                    objectFit: 'contain'
+                                }}
+                                className='transform hover:scale-115 transition-transform duration-300'
+                            />
+                        </div>
                     </div>
 
-                    {/* Button */}
-                    <div className="mx-auto md:mx-0" style={{
-                        width: 'clamp(300px, 100%, 400px)',
-                        height: 'clamp(65px, 5vw, 78.62px)',
-                        borderRadius: '100px',
-                        backgroundColor: '#1FE5FF',
-                        boxShadow: '0px 0px 44.4px 0px #000000',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '15px',
-                        marginLeft: '0px',
-                        cursor: 'pointer'
+                    {/* Design img */}
+                    <div className="absolute hidden lg:block" style={{
+                        width: '496px',
+                        height: '662px',
+                        top: '0',
+                        right: '0'
                     }}>
-            <span style={{
-                fontFamily: 'Work Sans, sans-serif',
-                fontWeight: 500,
-                fontSize: 'clamp(20px, 1.8vw, 28px)',
-                lineHeight: '100%',
-                letterSpacing: '0%',
-                color: '#000000'
-            }}>
-              Learn more about us
-            </span>
                         <img
-                            src="/assets/next.png"
-                            alt="next"
+                            src="/assets/designs5.png"
+                            alt="Design"
                             style={{
-                                width: '52px',
-                                height: '50px',
+                                width: '100%',
+                                height: '100%',
                                 objectFit: 'contain'
                             }}
                         />
                     </div>
-                </div>
-
-                {/* Design img */}
-                <div className="absolute hidden lg:block" style={{
-                    width: '496px',
-                    height: '662px',
-                    top: '0',
-                    right: '-65px'
-                }}>
-                    <img
-                        src="/assets/designs3.png"
-                        alt="Design"
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain'
-                        }}
-                    />
                 </div>
             </div>
         </section>
@@ -567,7 +567,7 @@ function ServicesSection() {
                                         {services[0].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -576,7 +576,7 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             </div>
@@ -600,7 +600,7 @@ function ServicesSection() {
                                         {services[1].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -609,7 +609,7 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] '
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300 '
                                     />
                                 </div>
                             </div>
@@ -633,7 +633,7 @@ function ServicesSection() {
                                         {services[2].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -642,7 +642,7 @@ function ServicesSection() {
                                         width={45}
                                         height={42}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             </div>
@@ -670,7 +670,7 @@ function ServicesSection() {
                                             {services[3].content}
                                         </p>
                                     </div>
-                                    <div className='flex items-center gap-2 mt-3'>
+                                    <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                         <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
                                             Learn More
                                         </p>
@@ -679,7 +679,7 @@ function ServicesSection() {
                                             width={35}
                                             height={33}
                                             alt='Learn More'
-                                            className='rotate-180 w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                            className='rotate-180 w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                         />
                                     </div>
                                 </div>
@@ -703,7 +703,7 @@ function ServicesSection() {
                                             {services[4].content}
                                         </p>
                                     </div>
-                                    <div className='flex items-center gap-2 mt-3'>
+                                    <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                         <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
                                             Learn More
                                         </p>
@@ -712,7 +712,7 @@ function ServicesSection() {
                                             width={35}
                                             height={33}
                                             alt='Learn More'
-                                            className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px]'
+                                            className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                         />
                                     </div>
                                 </div>
@@ -740,7 +740,7 @@ function ServicesSection() {
                                         {services[5].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -749,7 +749,7 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             </div>
@@ -772,7 +772,7 @@ function ServicesSection() {
                                         {services[6].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -781,7 +781,7 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             </div>
@@ -805,7 +805,7 @@ function ServicesSection() {
                                         {services[7].content}
                                     </p>
                                 </div>
-                                <div className='flex items-center gap-2 mt-3'>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
                                     <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-base font-medium'>
                                         Learn More
                                     </p>
@@ -814,7 +814,7 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px]'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             </div>
@@ -1106,7 +1106,7 @@ function Projects(){
                                             src="/assets/learn-more-black.png"
                                             fill
                                             alt="arrow"
-                                            className="object-contain rotate-180"
+                                            className="object-contain rotate-180 transform hover:scale-110 transition-transform duration-300"
                                         />
                                     </div>
                                 </div>
@@ -1117,11 +1117,12 @@ function Projects(){
                 </div>
                 <div className='flex justify-center items-center w-full h-20 mt-15'>
                     <Link href='#'>
-                    <Button className={` ${workSans.className} w-81 h-19 bg-transparent text-[#EBEBEB] border-[4px] text-2xl rounded-3xl`}>View All Projects <Image 
+                    <Button className={` ${workSans.className} w-81 h-19 bg-transparent text-[#EBEBEB] border-[4px] text-2xl rounded-3xl cursor-pointer`}>View All Projects <Image 
                         src="/assets/arrow.png"
                         height={30}
                         width={35}
                         alt='arrow'
+                        className='transform hover:scale-110 transition-transform duration-300'
                     /> </Button>
                     </Link>
                 </div>
@@ -1288,10 +1289,10 @@ function SecondStripe(){
             <style jsx>{`
                 @keyframes scroll-x {
                     0% {
-                        transform: translateX(0);
+                        transform: translateX(-50%);
                     }
                     100% {
-                        transform: translateX(-50%);
+                        transform: translateX(0);
                     }
                 }
                 
@@ -1310,9 +1311,10 @@ function SecondStripe(){
 
 export default function App() {
     return (
-        <div className="overflow-x-hidden " style={{
+        <div className="overflow-x-hidden  " style={{
             // minHeight: '11096px',
-            position: 'relative'
+            position: 'relative',
+            // transform:'scale(0.95)'
         }}>
             
             <div className="w-full relative" style={{

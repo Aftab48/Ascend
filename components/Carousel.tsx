@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/carousel"
 import clients from "@/public/clients.json"
 import Image from "next/image"
+import Autoplay from "embla-carousel-autoplay"
+
 export function CarouselSize() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -38,6 +40,11 @@ export function CarouselSize() {
           skipSnaps: false,
           dragFree: false,
         }}
+        plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
         className="w-full"
       >
         <CarouselContent className="-ml-4">

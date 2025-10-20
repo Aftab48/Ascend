@@ -95,7 +95,7 @@ export default function FAQItem() {
                           >
                            
                             <Button 
-                              className={` w-70 h-13 rounded-3xl bg-[#1FE5FF] text-black text-xl font-medium hover:bg-[#1FE5FF]/90`}
+                              className={` w-70 h-13 rounded-3xl bg-[#1FE5FF] text-black text-xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
                               style={{
                                 boxShadow: '0px 0px 44.4px 0px #000000'
                               }}
@@ -105,7 +105,7 @@ export default function FAQItem() {
                             
                             
                             <Button 
-                              className={` w-70 h-13 rounded-3xl bg-transparent border border-white text-white text-xl font-medium hover:bg-white/10`}
+                              className={` w-70 h-13 rounded-3xl bg-transparent border border-white text-white text-xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer`}
                               style={{
                                 boxShadow: '0px 0px 43.2px 0px #000000'
                               }}
