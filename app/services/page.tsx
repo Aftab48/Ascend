@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import * as Icons from "lucide-react";
@@ -5,22 +6,56 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { services } from "@/constants/services";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Glow from "@/components/Glow";
+import { Work_Sans, Exo_2 } from 'next/font/google'
 
-export const metadata: Metadata = {
-  title: "Our Services | Ascend Tech Agency",
-  description: "Explore our comprehensive digital services including web development, app development, UI/UX design, Web3 solutions, and custom software development.",
-};
+
+ const workSans = Work_Sans({
+    subsets:["latin"],
+    weight:["600","400"],
+    variable:"--font-work-sans"
+    })
+
+    const exo2 = Exo_2({
+    subsets:["latin"],
+    weight:["700","600","500","400"],
+    variable:"--font-exo-2"
+    })
+
+
 
 export default function ServicesPage() {
   return (
     <>
+
+   <style jsx global>{`
+        body {
+          background-color: white !important;
+        }
+      `}</style>
+
+   
+    <div className="bg-white min-h-screen">
+      <Glow
+      top={"1650px"}
+      right={"-200px"}
+      />
+      <Glow
+      top={"2490px"}
+      left={"-200px"}
+      />
+      <Glow
+      top={"3550px"}
+      right={"750px"}
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+      <section className=" relative bg-white pt-60 md:pt-72 lg:pt-90 pb-20 -mt-24 md:-mt-1 lg:-mt-1">
+        <div className={`w-full mx-auto px-4 sm:px-6 lg:px-8 text-center ${exo2.className} `}>
+          <h1 className="text-4xl md:text-5xl lg:text-[80px] font-bold text-black mb-6 mt-10">
             Our Services
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-2xl md:text-3xl text-black max-w-7xl mx-auto font-medium mt-15">
             Comprehensive digital solutions designed to help your business
             thrive in the modern world
           </p>
@@ -28,8 +63,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Detail Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-black  ">
+        <div className="max-w-8xl mx-auto px-5 ml-25 mr-20 sm:px-6 lg:px-8">
           {services.map((service, index) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const IconComponent = (Icons as any)[service.icon] || Icons.Code;
@@ -39,42 +74,56 @@ export default function ServicesPage() {
                 key={service.id}
                 id={service.slug}
                 className={`mb-20 scroll-mt-20 ${
-                  index !== 0 ? "pt-20 border-t border-gray-200" : ""
+                  index !== 0 ? "pt-20 " : ""
                 }`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                   {/* Service Info */}
                   <div>
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] rounded-xl flex items-center justify-center mr-4">
-                        <IconComponent className="h-8 w-8 text-white" />
+                      
+                        {/* <IconComponent className="h-8 w-8 text-white" /> */}
+                        <Image
+                          src="/assets/code.png"
+                          height={100}
+                          width={100}
+                          alt={service.slug}
+                          className=" mr-7"
+                        />
+                      <div className={`w-full p-6 ${exo2.className} `} >
+                        <h2
+                            className="text-7xl font-semibold text-[#FFFFFF] drop-shadow-[0_0_20px_#1FE5FF]"
+                          >
+                            {service.title}
+                          </h2>
                       </div>
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#111827]">
-                          {service.title}
-                        </h2>
-                        {service.pricing && (
-                          <p className="text-[#3B82F6] font-semibold mt-1">
-                            {service.pricing}
-                          </p>
-                        )}
-                      </div>
+                      
+                      
+
+
                     </div>
 
-                    <p className="text-xl text-gray-600 mb-6">
+                    <p className={`text-xl text-white mb-6 p-6 pl-0 mr-10 ${exo2.className} font-regular`}>
                       {service.longDescription}
                     </p>
 
+                    
                     {/* Key Features */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-bold text-[#111827] mb-4">
+                    <div className="mb-15">
+                      <h3 className={`text-4xl font-semibold text-white mb-10 ${exo2.className}`}>
                         Key Features
                       </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
                         {service.features.map((feature) => (
-                          <div key={feature} className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-[#3B82F6] mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700 text-sm">
+                          <div key={feature} className="flex   items-center  ">
+                            <Image  
+                              src="/assets/checkbox.png"
+                              height={45}
+                              width={45}
+                              alt="checkbox"
+                              className="mr-4"
+                            />
+                            <span className={`text-white text-2xl ${workSans.className} font-regular`}>
                               {feature}
                             </span>
                           </div>
@@ -83,15 +132,15 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Technologies */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-bold text-[#111827] mb-4">
+                    <div className={`mb-12 ${exo2.className} `}>
+                      <h3 className="text-4xl font-semibold text-white mb-10">
                         Technologies We Use
                       </h3>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap  gap-3 mr-20">
                         {service.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                            className="h-13  px-4 py-2 bg-[#1FE5FF] text-black text-2xl rounded-full flex items-center justify-center"
                           >
                             {tech}
                           </span>
@@ -99,62 +148,84 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <Button
-                      asChild
-                      size="lg"
-                      className="bg-[#3B82F6] hover:bg-[#3B82F6]/90"
-                    >
-                      <Link href="/contact">
-                        Get Started
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
+                    <div>
+                      <h3 className={`${exo2.className} text-4xl font-semibold text-white mb-8`}>
+                        Benefits
+                      </h3>
+                      <div className=" grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {service.benefits.map((benefit) => (
+                          <div key={benefit} className="flex items-center ">
+                            
+                              <Image 
+                                src="/assets/checkbox.png"
+                                height={45}
+                                width={45}
+                                alt="checkbox"
+                                className="mr-4"
+                              />
+                            
+                            <span className={`${workSans.className} text-white font-regular text-2xl`}>{benefit}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                        
+                    </div>
                   </div>
 
                   {/* Sub-Services & Benefits */}
                   <div className="space-y-6">
                     {/* Sub-Services */}
                     <div>
-                      <h3 className="text-2xl font-bold text-[#111827] mb-4">
+                      <div className={`${exo2.className} bg-[#1FE5FF] -skew-x-12 w-fit inline-block mt-42 rounded-lg`}>
+                      <h3 className="relative text-4xl font-bold text-black px-6 py-3 skew-x-12">
                         What We Offer
                       </h3>
-                      <div className="space-y-4">
+                    </div>
+
+                      <div className="space-y-6 mt-15">
                         {service.subServices.map((subService) => (
                           <Card
                             key={subService.title}
-                            className="border-l-4 border-l-[#3B82F6]"
+                            className="bg-[#1FE5FF] rounded-r-4xl pl-5 py-0 h-28 mb-8  "
+                           
                           >
-                            <CardHeader className="pb-2">
-                              <h4 className="font-bold text-[#111827]">
+                            <div className={`${exo2.className} bg-white h-full  pt-4 rounded-2xl  `}>
+                            <CardHeader >
+                              <h4 className="font-bold text-xl text-[#000000] rounded-lg">
                                 {subService.title}
                               </h4>
                             </CardHeader>
                             <CardContent>
-                              <p className="text-gray-600 text-sm">
+                              <p className="text-[#000000] text-lg font-light ">
                                 {subService.description}
                               </p>
                             </CardContent>
+                            </div>
                           </Card>
                         ))}
                       </div>
                     </div>
-
-                    {/* Benefits */}
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#111827] mb-4">
-                        Benefits
-                      </h3>
-                      <div className="space-y-3">
-                        {service.benefits.map((benefit) => (
-                          <div key={benefit} className="flex items-start">
-                            <div className="w-6 h-6 bg-[#3B82F6]/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                              <CheckCircle className="h-4 w-4 text-[#3B82F6]" />
-                            </div>
-                            <span className="text-gray-700">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    {/* Button */}
+                    <Button
+                      asChild
+                    
+                      size="lg"
+                      className={`${workSans.className} bg-[#1FE5FF] hover:bg-[#1FE5FF]/90 mt-27 w-60 h-15 rounded-4xl text-2xl font-semibold shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300`}
+                    >
+                      <Link href="/contact">
+                        Get Started
+                        <Image 
+                          src="/assets/next.png"
+                          height={20}
+                          width={25}
+                          alt="learn-more"
+                          className="hover:scale(110)"
+                        />
+                      </Link>
+                    </Button>
+                    
+                    
                   </div>
                 </div>
               </div>
@@ -164,8 +235,57 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#1E3A8A] to-[#2563EB]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="w-[95%] rounded-3xl  bg-[#000000]/10 mx-auto mt-20 h-140">
+
+          <div className="w-full h-full p-10 px-20 pt-5">
+           <h2 className={`${exo2.className} text-black text-[64px] font-semibold w-full   `}>Not sure which Service you need?</h2>
+         <div className="grid grid-cols-2   gap-3  items-center justify-center " >
+         
+                            <div className={`${exo2.className} flex flex-col col-span-1 flex-start   `}>
+      
+                                
+                                <p className={` font-light text-3xl text-[#000000] mb-10`}>Schedule a free consultation and we&apos;ll help you find the perfect solution for your business.</p>
+      
+                                
+                                <div 
+                                  className={`${workSans.className} w-180 h-27 rounded-full border border-white/50 flex items-center justify-center gap-6 px-5 backdrop-blur-[44.4px] `}
+                                  style={{
+                                    background: 'rgba(38, 37, 37, 0.53)'
+                                  }}
+                                >
+                                 
+                                  <Button 
+                                    className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
+                                    style={{
+                                      boxShadow: '0px 0px 44.4px 0px #000000'
+                                    }}
+                                  >
+                                    Schedule Consultation 
+                                  </Button>
+                                  
+                                  
+                                  <Button 
+                                    className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
+                                    style={{
+                                      boxShadow: '0px 0px 43.2px 0px #000000'
+                                    }}
+                                  >
+                                    Explore our services
+                                  </Button>
+                                </div>
+                            </div>
+                            <div className="flex flex-col col-span-1 items-center mb-15 ">
+                              <Image
+                              src="/assets/service-page.png"
+                                alt="FAQ"
+                                width={550}
+                                height={480}
+                                className="mb-15 -mt-9 ml-30"
+                              />
+                            </div>
+                      
+                    </div> 
+        {/* <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Not Sure Which Service You Need?
           </h2>
@@ -190,8 +310,11 @@ export default function ServicesPage() {
               <Link href="/portfolio">View Our Work</Link>
             </Button>
           </div>
+        </div> */}
         </div>
       </section>
+      
+      </div>
     </>
   );
 }

@@ -1,13 +1,13 @@
 "use client"
 import services from '@/public/services.json'
-import { Work_Sans, Exo_2 } from 'next/font/google'
+
 import Image from 'next/image'
 import projects from '@/public/projects.json'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import CarouselSize from './Carousel'
 import FAQItem from './FAQItem'
-
+import { Work_Sans, Exo_2 } from 'next/font/google'
 
 
  const workSans = Work_Sans({

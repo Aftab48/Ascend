@@ -15,7 +15,7 @@ export default function Navbar() {
     ];
 
     const isActive = (path: string) => pathname === path;
-
+    const activeCss = 'bg-[#12cbe3] h-16 w-45 flex items-center justify-center  text-white rounded-full px-10'
     return (
         <>
             <div className="absolute left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[1470px] top-8 md:top-12 lg:top-[54px] h-24 md:h-32 lg:h-[147px]">
@@ -29,7 +29,7 @@ export default function Navbar() {
                     <nav className="hidden md:flex items-center gap-8 lg:gap-16 text-[#0D0D0D]">
                         <Link
                             className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
-                                isActive("/") ? "bg-[#12cbe3] h-14 w-36 flex items-center justify-center  text-white rounded-full " : ""
+                                isActive("/") ? `${activeCss}` : ""
                             }`}
                             style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
                             href="/"
@@ -38,7 +38,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                             className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
-                                isActive("/services") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                                isActive("/services") ? `${activeCss}` : ""
                             }`}
                             style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
                             href="/services"
@@ -56,16 +56,16 @@ export default function Navbar() {
                     <nav className="hidden md:flex items-center gap-8 lg:gap-16 text-[#0D0D0D]">
                         <Link
                             className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
-                                isActive("/team") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                                isActive("/portfolio") ? `${activeCss}`  : ""
                             }`}
                             style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
-                            href="/team"
+                            href="/portfolio"
                         >
-                            Team
+                            Portfolio
                         </Link>
                         <Link
                             className={`hover:text-white transition-colors text-xl lg:text-[32px] font-normal px-6 py-2 ${
-                                isActive("/about") ? "bg-[#0D0D0D] text-white rounded-full" : ""
+                                isActive("/about") ? `${activeCss}`  : ""
                             }`}
                             style={{fontFamily: 'M PLUS 1, sans-serif', lineHeight: '100%'}}
                             href="/about"

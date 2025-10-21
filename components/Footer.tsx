@@ -38,10 +38,10 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className={`${workSans.className} bg-[#1FE5FF] text-black w-[95%] mx-auto rounded-3xl mt-20`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-12">
+      <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-0 py-12">
         
         <div className="flex items-center justify-between mb-12">
-          <Link href="/" className="flex items-center space-x-2 -ml-55">
+          <Link href="/" className="flex items-center space-x-2 -ml-10">
             <div className="w-130 h-25 rounded-lg flex items-center justify-center">
               <img src="/assets/logo.png" alt="logo" className="w-full h-full object-contain" />
             </div>
@@ -72,13 +72,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 font-medium">Company</h3>
+            <h3 className="font-semibold text-xl mb-4 font-medium">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-black hover:text-[#3B82F6] transition-colors text-md font-light"
+                    className="text-black hover:text-[#3B82F6] transition-colors text-lg font-light"
                   >
                     {link.name}
                   </Link>
