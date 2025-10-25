@@ -8,6 +8,7 @@ import { services } from "@/constants/services";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Glow from "@/components/Glow";
+
 import { Work_Sans, Exo_2 } from 'next/font/google'
 
 
@@ -239,9 +240,9 @@ export default function ServicesPage() {
 
           <div className="w-full h-full p-10 px-20 pt-5">
            <h2 className={`${exo2.className} text-black text-[64px] font-semibold w-full   `}>Not sure which Service you need?</h2>
-         <div className="grid grid-cols-2   gap-3  items-center justify-center " >
+            <div className="grid grid-cols-2   gap-3  items-center justify-center " >
          
-                            <div className={`${exo2.className} flex flex-col col-span-1 flex-start   `}>
+                <div className={`${exo2.className} flex flex-col col-span-1 flex-start   `}>
       
                                 
                                 <p className={` font-light text-3xl text-[#000000] mb-10`}>Schedule a free consultation and we&apos;ll help you find the perfect solution for your business.</p>
@@ -273,47 +274,21 @@ export default function ServicesPage() {
                                     Explore our services
                                   </Button>
                                 </div>
-                            </div>
-                            <div className="flex flex-col col-span-1 items-center mb-15 ">
-                              <Image
+                    </div>
+                        <div className="flex flex-col col-span-1 items-center mb-15 ">
+                           <Image
                               src="/assets/service-page.png"
                                 alt="FAQ"
                                 width={550}
                                 height={480}
                                 className="mb-15 -mt-9 ml-30"
                               />
-                            </div>
-                      
-                    </div> 
-        {/* <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Not Sure Which Service You Need?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Schedule a free consultation and we&apos;ll help you find the perfect
-            solution for your business
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#3B82F6] hover:bg-[#3B82F6]/90"
-            >
-              <Link href="/contact">Schedule Consultation</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white  text-black hover:text-white hover:bg-white/10"
-            >
-              <Link href="/portfolio">View Our Work</Link>
-            </Button>
-          </div>
-        </div> */}
-        </div>
-      </section>
-      
+                          </div>
+
+                </div>
+            </div>
+        </section>
+
       </div>
     </>
   );
