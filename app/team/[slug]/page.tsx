@@ -64,34 +64,20 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
       {/* Hero Section */}
       <section className={`bg-black  mt-80 ${workSans.className}`}>
        <div className="h-90 bg-[#8C8C8C]/40 flex flex-col items-center justify-end transition-all duration-300 " style={{boxShadow: '0 0 35px #8C8C8C'}}>
-        <div className="mb-10 ml-80 ">
-            <h1
-                className={`${exo2.className} text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-4 drop-shadow-[0_0_20px_#1FE5FF]`}
-            >
-                {member.name}
-            </h1>
-            <p
-                className={`${workSans.className} text-2xl md:text-4xl text-[#1FE5FF] mb-4 font-medium`}
-            >
-                {member.role}
-            </p>
-            <div className={`flex ${workSans.className} text-2xl text-white font-regular `}>
-            <Briefcase className="h-8 w-8 mr-3" />
-            <span >{member.yearsOfExperience} years of experience</span>
-            </div>
-            </div>
+     
         </div>
 
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center w-[85%] mx-60 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-15 items-center w-[85%] mx-60 ">
+           
             {/* Profile Image */}
-            <div className="lg:col-span-1 flex justify-center -mt-60  ml-20 ">
+            <div className="lg:col-span-1 flex justify-center -mt-50    ">
               <div className="relative   rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
                   src={member.image}
                   alt={member.name}
                   height={470}
-                  width={402}
+                  width={470}
                   className="object-cover"
                   priority
                 />
@@ -99,15 +85,31 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
             </div>
 
             {/* Profile Info */}
-            <div className="lg:col-span-2 text-center lg:text-left">
+            <div className="lg:col-span-2 text-center lg:text-left -mt-62   ml-10">
+              <div className="mb-10   ">
+            <h1
+                className={`${exo2.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFFFFF] mb-4 drop-shadow-[0_0_20px_#1FE5FF]`}
+            >
+                {member.name}
+            </h1>
+            <p
+                className={`${workSans.className} text-2xl md:text-3xl text-[#1FE5FF] mb-6  font-medium`}
+            >
+                {member.role}
+            </p>
+            <div className={`flex ${workSans.className} text-xl lg:text-2xl text-white font-regular  `}>
+            <Briefcase className="h-8 w-8 mr-3" />
+            <span >{member.yearsOfExperience} years of experience</span>
+            </div>
+          </div>
            
               
-              <p className={`${workSans.className} text-xl text-white mb-8 w-full ml-35 pr-27 mt-10`}>
+              <p className={`${workSans.className} text-xl text-white mb-8 w-full  pr-27 mt-20   `}>
                 {member.summary}
               </p>
 
               {/* Social Links */}
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start ml-35">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start ">
                 {member.email && (
                   <Button
                     asChild

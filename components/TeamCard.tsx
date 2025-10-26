@@ -63,7 +63,7 @@ export function Team({image,name,role,bio,slug,linkedin,github,canva}:TeamProps)
                       height={34}
                       width={29}
                       alt="click"
-                      className="rotate-[180deg] ml-2"
+                      className="rotate-[180deg] ml-2 hover:translate-x-3  transition-transform duration-300"
                     />
                     
                     </div>
