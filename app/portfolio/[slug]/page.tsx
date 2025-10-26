@@ -1,3 +1,5 @@
+
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,20 +8,41 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { projects } from "@/constants/projects";
 
+import { Work_Sans, Exo_2 } from 'next/font/google'
+import ProjectImageCarousel from "@/components/ProjectCarousol";
+
+
+
+
+
+ const workSans = Work_Sans({
+    subsets:["latin"],
+    weight:["600","400"],
+    variable:"--font-work-sans"
+    })
+
+    const exo2 = Exo_2({
+    subsets:["latin"],
+    weight:["700","600","500","400"],
+    variable:"--font-exo-2"
+    })
+
 interface Props {
   params: {
     slug: string;
   };
 }
 
-export function generateStaticParams() {
+export  function generateStaticParams() {
+  
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export function generateMetadata({ params }: Props) {
-  const project = projects.find((p) => p.slug === params.slug);
+ 
+  const project =  projects.find((p) => p.slug === params.slug);
   
   if (!project) {
     return {
@@ -30,6 +53,11 @@ export function generateMetadata({ params }: Props) {
   return {
     title: `${project.title} | Ascend Tech Agency`,
     description: project.description,
+    icons: {
+      icon: '/assets/header-logo.ico',
+      apple: '/assets/header-logo.ico',
+  }
+
   };
 }
 
@@ -42,37 +70,46 @@ export default function ProjectPage({ params }: Props) {
 
   return (
     <>
+    <section className="h-80 bg-black"></section>
+
+      
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className={`${workSans.className} bg-[#8C8C8C]/30 transition-all duration-300 py-12`} style={{boxShadow: '0 0 35px #8C8C8C inset,0 0 25px #8C8C8C'}}>
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-27">
           <Link
             href="/portfolio"
-            className="inline-flex items-center text-gray-300 hover:text-white mb-6 transition-colors"
+            className={`${exo2.className} inline-flex items-center text-white hover:text-white/80 font-regular text-3xl mb-6 transition-colors`}
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <Image 
+              src="/assets/learn-more.png"
+              width={30}
+              height={30}
+              alt="back"
+              className="mr-4 hover:scale-110"
+            />
             Back to Portfolio
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-[#3B82F6] text-white text-sm font-semibold px-4 py-1 rounded-full">
+              <div className="flex items-center gap-3 mb-4 pb-13">
+                <span className="bg-[#1FE5FF] text-black text-xl font-medium px-4 py-1 rounded-full">
                   {project.category}
                 </span>
-                <div className="flex items-center text-gray-300 text-sm">
+                <div className="flex items-center text-white text-xl bg-transparent border-1 border-white rounded-full px-4 py-1">
                   <Calendar className="h-4 w-4 mr-1" />
                   {project.duration}
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className={`text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-[0_0_20px_#1FE5FF]`}>
                 {project.title}
               </h1>
-              <p className="text-xl text-gray-300 mb-6">{project.tagline}</p>
+              <p className="text-2xl text-[#1FE5FF] font-medium mb-10">{project.tagline}</p>
 
-              <div className="flex items-center text-gray-300">
+              <div className="flex items-center text-white text-xl font-regular">
                 <Tag className="h-4 w-4 mr-2" />
-                <span className="text-sm">{project.clientIndustry}</span>
+                <span>{project.clientIndustry}</span>
               </div>
             </div>
 
@@ -89,34 +126,43 @@ export default function ProjectPage({ params }: Props) {
       </section>
 
       {/* Project Overview */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-l-4 border-l-[#3B82F6]">
+      <section className="py-17 ">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-15 flex items-center justify-center">
+          <Card className=" bg-[#1FE5FF] pl-5 py-0 rounded-3xl">
+            <div className="bg-white p-8 rounded-3xl overflow-hidden">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-[#111827]">Project Overview</h2>
+              <h2 className={`${exo2.className} text-4xl font-semibold text-[#111827]`}>Project Overview</h2>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700 text-lg">{project.description}</p>
+              <p className="text-[#0D0D0D] text-xl">{project.description}</p>
             </CardContent>
+            </div>
           </Card>
+          
         </div>
       </section>
 
       {/* Goals & Challenges */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="py-12 bg-black">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-15 ">
+          <div className="flex flex-row gap-20 px-40 items-center justify-center w-full">
             {/* Goals */}
-            <Card>
+            <Card className="bg-[#8C8C8C]/20 p-10 rounded-3xl " style={{boxShadow: '0 0 35px #8C8C8C inset'}}>
               <CardHeader>
-                <h2 className="text-2xl font-bold text-[#111827]">Project Goals</h2>
+                <h2 className={`${exo2.className} text-4xl font-semibold text-white mt-10`}>Project Goals</h2>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {project.goals.map((goal, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#3B82F6] mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{goal}</span>
+                      <Image 
+                        src="/assets/checkbox.png"
+                        height={30}
+                        width={30}
+                        alt="goal"
+                        className="mr-5"
+                      />
+                      <span className="text-white text-2xl">{goal}</span>
                     </li>
                   ))}
                 </ul>
@@ -124,18 +170,18 @@ export default function ProjectPage({ params }: Props) {
             </Card>
 
             {/* Challenges */}
-            <Card>
+            <Card className="bg-[#8C8C8C]/20 p-10  rounded-3xl " style={{boxShadow: '0 0 35px #8C8C8C inset'}}>
               <CardHeader>
-                <h2 className="text-2xl font-bold text-[#111827]">Challenges</h2>
+                <h2 className={`${exo2.className} text-4xl font-semibold text-white mt-10`}>Challenges</h2>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {project.challenges.map((challenge, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="w-6 h-6 bg-[#3B82F6]/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                        <span className="text-[#3B82F6] text-sm font-bold">{index + 1}</span>
+                      <div className="w-8 h-8 bg-[#1FE5FF] rounded-full flex items-center justify-center  flex-shrink-0 mt-0.5 mr-5 shadow-[0_0_15px_#1FE5FF] transition-all duration-300">
+                        <span className="text-white text-lg font-bold">{index + 1}</span>
                       </div>
-                      <span className="text-gray-700">{challenge}</span>
+                      <span className="text-white text-2xl">{challenge}</span>
                     </li>
                   ))}
                 </ul>
@@ -146,20 +192,22 @@ export default function ProjectPage({ params }: Props) {
       </section>
 
       {/* Solutions */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#111827] mb-8 text-center">Our Solution</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className={`${workSans.className} py-12 bg-black`}>
+        <div className="w-full mx-auto px-4 sm:px-6 md:px-20 lg:px-25">
+          <h2 className={`${exo2.className} text-4xl font-semibold text-white mb-10 text-center`}>Our Solution</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-15">
             {project.solutions.map((solution, index) => (
-              <Card key={index} className="border-t-4 border-t-[#3B82F6]">
+              <Card key={index} className="bg-[#1FE5FF] rounded-4xl pt-5 pb-0 overflow-hidden">
+                <div className="bg-white h-full py-5 rounded-3xl">
                 <CardContent className="pt-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <div className="flex items-start ml-5 pb-10">
+                    <div className="w-8 h-8 bg-[#1FE5FF] rounded-full flex items-center justify-center mr-3 flex-shrink-0 shadow-[0_0_15px_#1FE5FF] transition-all duration-300">
                       <span className="text-white text-sm font-bold">{index + 1}</span>
                     </div>
-                    <p className="text-gray-700">{solution}</p>
+                    <p className="text-black font-regular text-xl ">{solution}</p>
                   </div>
                 </CardContent>
+                </div>
               </Card>
             ))}
           </div>
@@ -167,14 +215,14 @@ export default function ProjectPage({ params }: Props) {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#111827] mb-8 text-center">Technology Stack</h2>
+      <section className={`${workSans.className} py-12 bg-black`}>
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`${exo2.className} text-4xl font-semibold text-white mb-8 text-center`}>Technology Stack</h2>
           <div className="flex flex-wrap gap-3 justify-center">
             {project.techStack.map((tech) => (
               <div
                 key={tech}
-                className="px-6 py-3 bg-white border-2 border-[#3B82F6] text-[#111827] font-semibold rounded-lg hover:bg-[#3B82F6] hover:text-white transition-all"
+                className="px-6 py-3 bg-transparent border-2 border-[#1FE5FF] text-white text-2xl font-semibold rounded-full  transition-all"
               >
                 {tech}
               </div>
@@ -183,39 +231,44 @@ export default function ProjectPage({ params }: Props) {
         </div>
       </section>
 
+
+
       {/* Project Images */}
-      {project.images && project.images.length > 0 && (
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#111827] mb-8 text-center">Project Showcase</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.images.map((image, index) => (
-                <div key={index} className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src={image}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+
+    <section className="py-12 pt-20 mb-12 bg-black">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className={`${exo2.className} text-4xl font-semibold text-white mb-12 text-center`}>Project Showcase</h2>
+        <div className="flex items-center justify-center">
+
+        {project.images && project.images.length > 0 && (
+            <ProjectImageCarousel images={project.images} projectTitle={project.title} />
+          )}
+      </div>
+      </div>
+    </section>
+
+
+
+      
+ 
 
       {/* Results */}
-      <section className="py-12 bg-gradient-to-br from-[#1E3A8A] to-[#2563EB]">
+      <section className={`${workSans.className} bg-[#8C8C8C]/30 transition-all duration-300 py-12`} style={{boxShadow: '0 0 35px #8C8C8C inset,0 0 25px #8C8C8C'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Results & Impact</h2>
+          <h2 className={`${exo2.className} text-4xl font-semibold text-white mb-12 text-center`}>Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {project.results.map((result, index) => (
-              <Card key={index} className="text-center">
+              <Card key={index} className="text-center border-1 border-[#1FE5FF]">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12  rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Image
+                      src="/assets/checkbox.png"
+                      height={30}
+                      width={30}
+                      alt="results"
+                    />
                   </div>
-                  <p className="text-gray-700 font-medium">{result}</p>
+                  <p className="text-white text-xl font-regular">{result}</p>
                 </CardContent>
               </Card>
             ))}
@@ -224,24 +277,68 @@ export default function ProjectPage({ params }: Props) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
-            Want Similar Results for Your Business?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Let&apos;s discuss how we can help you achieve your goals with a custom solution
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#3B82F6] hover:bg-[#3B82F6]/90">
-              <Link href="/contact">Start Your Project</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-[#1E3A8A] text-[#111827] hover:bg-[#1E3A8A] hover:text-white">
-              <Link href="/portfolio">View More Projects</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+
+
+
+      <section className="w-[95%] rounded-3xl  bg-[#FFFFFF]/20 mx-auto mt-20 h-140" 
+                style={{
+                    background: '#1B2021/30',
+                    boxShadow: '-26px 26px 26px 0px #6B6B6B inset, 26px -26px 26px 0px #6B6B6B inset',
+                    backdropFilter: 'blur(78.33333587646484px)'
+                    }}>
+          
+            
+              <div className="w-full h-full p-10 px-20 pt-5">
+                  <h2 className={`${exo2.className} text-white text-[64px] font-semibold w-full pt-5   `}>Want to work with us?</h2>
+                    <div className="grid grid-cols-2   gap-3  items-center justify-center " >
+                     
+                      <div className={`${exo2.className} flex flex-col col-span-1 flex-start   `}>
+                  
+                                            
+                        <p className={` font-light text-3xl text-white mb-15`}>Get Let&apos;s discuss how we can help you achieve your goals with a custom solution :</p>
+
+                          <div
+                            className={`${workSans.className} w-180 h-27 rounded-full border border-white/50 flex items-center justify-center gap-6 px-5 backdrop-blur-[44.4px] `}
+                            style={{
+                            background: 'rgba(38, 37, 37, 0.53)'
+                             }}>
+                            <Link href={`/contact`}>
+                            <Button
+                              className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
+                              style={{
+                               boxShadow: '0px 0px 44.4px 0px #000000'
+                                }}>
+                                              
+                                  Start your project 
+                              </Button>
+                              </Link>
+                                              
+                               <Link href={`/about#team`}>
+                                  <Button 
+                                   className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
+                                    style={{
+                                      boxShadow: '0px 0px 43.2px 0px #000000'
+                                      }}>
+                                                 
+                                      View more projects
+                                      </Button>
+                                </Link>
+                          </div>
+                        </div>
+                          <div className="flex flex-col col-span-1 items-center mb-10  ">
+                                       <Image
+                                          src="/assets/personal.png"
+                                            alt="FAQ"
+                                            width={480}
+                                            height={410}
+                                            className="mb-10 -mt-35 ml-30 scale-110   "
+                                          />
+                            </div>
+            
+                      </div>
+                  </div>
+        </section>
+
     </>
   );
 }

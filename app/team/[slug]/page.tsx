@@ -330,7 +330,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                                           style={{
                                             background: 'rgba(38, 37, 37, 0.53)'
                                             }}>
-                                        
+                                          <Link href={`/contact`}>
                                           <Button
                                             className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
                                             style={{
@@ -339,8 +339,9 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                                               
                                                 Contact Us 
                                               </Button>
+                                              </Link>
                                               
-                                              
+                                              <Link href={`/about#team`}>
                                               <Button 
                                                 className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
                                                 style={{
@@ -355,6 +356,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
                                                   /> 
                                                 Back to team
                                               </Button>
+                                              </Link>
                                             </div>
                                     </div>
                                     <div className="flex flex-col col-span-1 items-center mb-15  ">
@@ -369,7 +371,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
             
                             </div>
                         </div>
-                    </section>
+        </section>
     </>
   );
 }

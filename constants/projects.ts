@@ -28,6 +28,7 @@ export const projects: Project[] = [
     images: [
       "https://images.unsplash.com/photo-1557821552-17105176677c?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop",
     ],
     techStack: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "TailwindCSS", "AWS"],
     goals: [

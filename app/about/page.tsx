@@ -11,6 +11,7 @@ import Strip from "@/components/Strip";
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import Team from "@/components/TeamCard";
 
+
  const workSans = Work_Sans({
     subsets:["latin"],
     weight:["600","400"],
@@ -26,6 +27,9 @@ import Team from "@/components/TeamCard";
 
 
 export default function AboutPage() {
+
+
+
   return (
     <>
 
@@ -178,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black" id="team">
         <div className="w-full mx-auto m-25  px-4 sm:px-6 lg:px-8">
           <div className={`${exo2.className} text-white font-semibold text-6xl mx-32 mb-15 `}>
             <h2 className=" font-bold ">

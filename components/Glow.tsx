@@ -2,19 +2,21 @@
 type GlowProps = {
   top: string;
   left?: string;
-  right?:string
+  right?:string;
+  width?:string;
+  height?:string;
 };
 
-export function Glow({ top, left,right }: GlowProps) {
+export function Glow({ top, left,right,width,height }: GlowProps) {
     return (
           <div className="absolute rounded-full" style={{
-                width: '358px',
-                height: '300px',
+                width: width || '358px',
+                height: height || '300px',
                 top,
                 left,
                 right,
                 backgroundColor: '#1FE5FFBF',
-                filter: 'blur(200px)',
+                filter: 'blur(100px)',
                 pointerEvents: 'none',
                 zIndex: 0
             }} />
