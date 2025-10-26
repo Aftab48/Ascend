@@ -45,6 +45,10 @@ export async function generateMetadata({ params }: TeamMemberPageProps): Promise
   return {
     title: `${member.name} - ${member.role} | Ascend Tech Agency`,
     description: member.summary,
+    icons: {
+    icon: '/assets/header-logo.ico',
+    apple: '/assets/header-logo.ico',
+  }
   };
 }
 

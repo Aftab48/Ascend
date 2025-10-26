@@ -2,13 +2,10 @@
 
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import * as Icons from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { teamMembers, companyInfo } from "@/constants/teamInfo";
-import type { Metadata } from "next";
 import Stats from "@/components/Stats";
 import Strip from "@/components/Strip";
 import { Work_Sans, Exo_2 } from 'next/font/google'
@@ -26,10 +23,7 @@ import Team from "@/components/TeamCard";
     variable:"--font-exo-2"
     })
 
-// export const metadata: Metadata = {
-//   title: "About Us | Ascend Tech Agency",
-//   description: "Learn about Ascend Tech Agency - our mission, values, team, and commitment to delivering exceptional digital solutions.",
-// };
+
 
 export default function AboutPage() {
   return (
@@ -46,22 +40,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      {/* Hero Section */}
 
-
-      {/* <section className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              About Ascend Tech Agency
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
-              We&apos;re a team of passionate technologists, designers, and problem
-              solvers dedicated to building exceptional digital experiences
-            </p>
-          </div>
-        </div>
-      </section> */}
 
       {/* Company Story */}
       <section className="py-20 bg-black text-white ">
