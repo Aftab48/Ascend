@@ -53,7 +53,7 @@ export default function FAQItem() {
             
             <div className='w-full h-full relative z-10'>
 
-                <div className='flex flex-col items-center justify-center h-full text-white mb-25'>
+                <div id="faq" className='flex flex-col items-center justify-center h-full text-white mb-25'>
                     <h2 className={`${exo2.className} text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-6 md:mb-8 lg:mb-10 mt-20`}>
                         Frequently Asked Questions
                     </h2>

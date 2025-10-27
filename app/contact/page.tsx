@@ -2,16 +2,29 @@
 
 import { useState,useEffect } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send, MessageSquare, MessageCircleMore } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import Cookies from 'js-cookie';
+import { Work_Sans, Exo_2 } from 'next/font/google'
+import { Tools } from "@/components/Tools";
+import Image from "next/image";
 
-// Note: Metadata should be exported from a separate layout.tsx or page wrapper
-// since this is a client component. For now, the parent layout handles it.
+ const workSans = Work_Sans({
+    subsets:["latin"],
+    weight:["600","400"],
+    variable:"--font-work-sans"
+    })
+
+    const exo2 = Exo_2({
+    subsets:["latin"],
+    weight:["700","600","500","400"],
+    variable:"--font-exo-2"
+    })
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -66,48 +79,62 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@ascendtech.agency",
-      href: "mailto:hello@ascendtech.agency",
+      content: ["mdalam4884@gmail.com"],
+      href: "mailto:mdalam4884@gmail.com",
       description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (234) 567-890",
-      href: "tel:+1234567890",
-      description: "Mon-Fri from 9am to 6pm EST",
+      content: ["+91 9903776046"],
+      href: "tel:+91 9903776046",
+      description: "Mon-Fri from 9am to 6pm IST",
     },
     {
-      icon: MapPin,
-      title: "Visit Us",
-      content: "San Francisco, CA",
-      href: "#",
-      description: "Remote-first, serving clients globally",
+      
+      icon: MessageSquare,
+      title: "Prefer instant messaging?",
+      content: ["+91 9903776046", "+91 7044472365", "+1 (929) 592-5279"],
+      href: "wa.me",
+      description: "Connect with us on WhatsApp for quick responses.",
     },
   ];
 
   return (
     <>
+
+       <style jsx global>{`
+        body {
+          background-color: white ;
+        }
+      `}</style>
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+      <section className={`${exo2.className} mt-60 py-20 w-full mx-auto px-50 `}>
+        <div className="  px-4 sm:px-6 lg:px-8 text-center border-1 border-black rounded-3xl p-10">
+          <h1 className="text-4xl md:text-6xl lg:text-[80px] font-bold text-black mb-8">
             Let&apos;s Build Something Amazing
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Ready to start your project? Get in touch and let&apos;s discuss how we can help bring your vision to life
+          <p className="text-xl md:text-3xl text-black max-w-3xl mx-auto font-medium mb-1">
+            Ready to start your project? 
           </p>
+          <p className="text-3xl text-black font-medium">Get in touch and let&apos;s discuss how we can help bring your vision to life</p>
         </div>
+        <div className="border-b-4 border-black mx-40 mt-17 blur-md "></div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className={`${exo2.className} py-20 bg-white`}>
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mx-25">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-[#111827] mb-6">Get in Touch</h2>
-              <p className="text-lg text-gray-600 mb-8">
+                <div className={`${exo2.className} bg-[#1FE5FF] -skew-x-12 w-fit inline-block  rounded-lg`}>
+                  <h3 className="relative text-4xl font-semibold text-black px-6 py-3 skew-x-12">
+                    Get in touch
+                  </h3>
+                </div>
+              <p className="text-2xl text-black font-regular mb-8 mt-10">
                 Have a project in mind? Questions about our services? We&apos;d love to hear from you. Fill out the form or reach out directly through any of the channels below.
               </p>
 
@@ -115,21 +142,29 @@ export default function ContactPage() {
                 {contactInfo.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <Card key={item.title} className="hover:shadow-lg transition-shadow">
+                    <Card key={item.title} className="hover:shadow-lg transition-shadow bg-black border-0" 
+                    style={{
+                      boxShadow: '-15px 15px 15px 0px #1290A1 inset, 15px -15px 15px 0px #1290A1 inset'
+                      }}
+                    >
                       <CardContent className="p-6">
-                        <div className="flex items-start">
-                          <div className="w-12 h-12 bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                            <Icon className="h-6 w-6 text-white" />
+                        <div className="flex flex-col items-start">
+                          <div className="  rounded-lg flex items-center justify-center mr-4 ml-5 flex-shrink-0 p-0">
+                            <Icon className="h-6 w-6 text-white mr-3" />
+                            <h3 className="font-semibold text-white text-2xl mb-1">{item.title}</h3>
                           </div>
-                          <div>
-                            <h3 className="font-bold text-[#111827] mb-1">{item.title}</h3>
-                            <a
-                              href={item.href}
-                              className="text-[#3B82F6] hover:underline text-lg font-medium block"
+                          <div className="ml-14">
+                            
+                          <div className="flex flex-row gap-4">
+                             {item.content.map((line, index) => ( <a
+                           key={index}
+                              href={item.href === "wa.me" ? `https://wa.me/${line.replace(/\s+/g, '')}` : item.href}
+                              className="text-[#1FE5FF] hover:underline text-xl font-medium block"
                             >
-                              {item.content}
-                            </a>
-                            <p className="text-gray-600 text-sm mt-1">{item.description}</p>
+                             {line}
+                            </a>))}
+                          </div>
+                            <p className="text-[#EBEBEB] text-base mt-5">{item.description}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -139,35 +174,17 @@ export default function ContactPage() {
               </div>
 
               {/* Alternative Contact Methods */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-bold text-[#111827] mb-4">Prefer instant messaging?</h3>
-                <p className="text-gray-600 mb-4">
-                  Connect with us on WhatsApp for quick responses
-                </p>
-                <Button
-                  asChild
-                  className="bg-[#25D366] hover:bg-[#25D366]/90 w-full sm:w-auto"
-                >
-                  <a
-                    href="https://wa.me/1234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Phone className="mr-2 h-4 w-4" />
-                    Message on WhatsApp
-                  </a>
-                </Button>
-              </div>
+
             </div>
 
             {/* Contact Form */}
-            <div>
-              <Card>
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-[#111827] mb-6">Send us a Message</h2>
+            <div className={`${exo2.className} `}>
+              <Card className="px-9 bg-[#1FE5FF]">
+                <CardContent className="pt-7">
+                  <h2 className="text-4xl font-semibold text-black mb-6">Send us a Message</h2>
                   
                   {submitStatus === "success" && (
-                    <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="mb-6 p-3 bg-green-50 border border-green-200 rounded-lg">
                       <p className="text-green-800 font-medium">
                         Thank you! We&apos;ll get back to you soon.
                       </p>
@@ -175,22 +192,22 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        className="mt-1"
-                      />
+                    <div >
+                      <Label htmlFor="name" className="text-2xl">Name *</Label>
+                     <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      className="mt-2 bg-white mb-5 h-15 !text-xl"
+                    />
                     </div>
 
                     <div>
-                      <Label htmlFor="email">Email *</Label>
+                      <Label className="text-2xl" htmlFor="email">Email *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -199,12 +216,12 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="mt-1"
+                        className="mt-2 bg-white mb-5 h-15 !text-xl"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="company">Company</Label>
+                      <Label className="text-2xl" htmlFor="company">Company</Label>
                       <Input
                         id="company"
                         name="company"
@@ -212,12 +229,12 @@ export default function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your Company Name"
-                        className="mt-1"
+                        className="mt-2 bg-white mb-5 h-15 !text-xl"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Message *</Label>
+                      <Label className="text-2xl" htmlFor="message">Message *</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -226,39 +243,111 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="Tell us about your project..."
                         rows={6}
-                        className="mt-1"
+                        className="mt-2 bg-white mb-5 h-35 !text-xl"
                       />
                     </div>
-
+                  <div className="flex items-center justify-center">
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#3B82F6] hover:bg-[#3B82F6]/90"
-                      size="lg"
+                      className="w-[50%] bg-[#000000] cursor-pointer rounded-full text-xl text-[#1FE5FF] h-15 "
+                      
                     >
                       {isSubmitting ? (
                         "Sending..."
                       ) : (
                         <>
+
+                          <MessageCircleMore className="mr-2 h-15 w-15" />
                           Send Message
-                          <Send className="ml-2 h-4 w-4" />
                         </>
                       )}
                     </Button>
+                    </div>
                   </form>
 
-                  <p className="text-sm text-gray-500 mt-4 text-center">
-                    We typically respond within 24 hours
-                  </p>
+
                 </CardContent>
               </Card>
+                  <p className="text-xl text-black mt-4 text-center">
+                    We typically respond within 24 hours
+                  </p>
             </div>
           </div>
         </div>
+
+        <div className="border-b-4 border-black mx-40 mt-20 blur-md "></div>
       </section>
+      <section className={`p-20 mt-70 relative ${exo2.className} font-semibold text-2xl`}>
+
+      <Tools
+      content="BLOCKCHAIN"
+      left="20px"
+      classname="rotate-[-14.4deg] -translate-y-1/2"
+      />
+
+      <Tools
+      content="BRAND DESIGN"
+      left="211px"
+      classname="rotate-[0deg]"
+      />
+
+      <Tools
+      content="SEO"
+      left="371px"
+      bottom="29px"
+      classname="rotate-[37.6deg] -translate-y-1/2"
+      />
+      <Tools
+      content="AI/ML"
+      left="670px"
+      bottom="0PX"
+      classname="rotate-[0deg] ml-15 "
+      />
+      <Tools
+      content="WEB3"
+      left="800px"
+      bottom="61px"
+      
+      classname="rotate-[0deg] ml-15 "
+      />
+       <Tools
+      content="BACKEND"
+      left="1050px"
+      bottom="61px"
+      
+      classname="rotate-[45.8deg] -translate-y-1/2 "
+      />
+
+        <Tools
+      content="UI/UX"
+      left="1300px"
+      bottom="20px"
+      
+      classname="rotate-[-20.19deg] -translate-y-1/2 ml-8 "
+      />
+        <Tools
+      content="WEB DEVELOPMENT"
+      left="1500px"
+      bottom="20px"
+      
+      classname="rotate-[-20.45deg] -translate-y-1/2 "
+      />
+        <Tools
+      content="APP DEVELOPEMENT"
+      left="1680px"
+      bottom="61px"
+      
+      classname="rotate-[-65.8deg] -translate-y-1/2 "
+      />
+      
+
+      </section>
+      <div className="border-t-8 border-black   blur-md "></div>
+      <div className="h-20 bg-black "></div>
 
       {/* FAQ Quick Links */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-[#111827] mb-6">Before You Reach Out</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -273,7 +362,53 @@ export default function ContactPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <section className="w-[95%] rounded-3xl   mx-auto mt-50 h-140 bg-gray-300" 
+                style={{
+                    
+                    boxShadow: '-36px 36px 36px 0px #0d0d0d inset, 36px -36px 36px 0px #0d0d0d inset',
+                    backdropFilter: 'blur(78.33333587646484px)'
+                    }}>
+          
+            
+              <div className="w-full h-full p-10 px-20 pt-5 flex flex-col items-center justify-center text-center">
+                  <h2 className={`${exo2.className} text-black text-[64px] font-semibold w-full pt-5   `}>Before you reach out</h2>
+
+                  <p className={` font-light text-3xl text-black mb-15`}>You might find answers to your questions in our FAQ section or learn more about our process on the services page</p>
+
+
+                    <div
+                            className={`${workSans.className} w-180 h-27 rounded-full border border-white/50 flex items-center justify-center gap-6 px-5 backdrop-blur-[44.4px] `}
+                            style={{
+                            background: 'rgba(38, 37, 37, 0.53)'
+                             }}>
+                            <Link href={`/#faq`}>
+                            <Button
+                              className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
+                              style={{
+                               boxShadow: '0px 0px 44.4px 0px #000000'
+                                }}>
+                                              
+                                  View FAQs 
+                              </Button>
+                              </Link>
+                                              
+                               <Link href={`/services`}>
+                                  <Button 
+                                   className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
+                                    style={{
+                                      boxShadow: '0px 0px 43.2px 0px #000000'
+                                      }}>
+                                                 
+                                      Our services
+                                      </Button>
+                                </Link>
+                          </div>                      
+                    
+                  </div>
+        </section>
+
     </>
   );
 }
