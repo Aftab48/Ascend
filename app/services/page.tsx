@@ -50,6 +50,16 @@ export default function ServicesPage() {
       top={"3550px"}
       right={"750px"}
       />
+       <Glow
+      top={"4350px"}
+      right={"1000px"}
+      width="600px"
+      height="600px"
+      />
+      <Glow
+      top={"5650px"}
+      right={"750px"}
+      />
       {/* Hero Section */}
       <section className=" relative bg-white pt-60 md:pt-72 lg:pt-90 pb-20 -mt-24 md:-mt-1 lg:-mt-1">
         <div className={`w-full mx-auto px-4 sm:px-6 lg:px-8 text-center ${exo2.className} `}>

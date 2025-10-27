@@ -10,6 +10,7 @@ import Stats from "@/components/Stats";
 import Strip from "@/components/Strip";
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import Team from "@/components/TeamCard";
+import Glow from "@/components/Glow";
 
 
  const workSans = Work_Sans({
@@ -48,6 +49,10 @@ export default function AboutPage() {
 
       {/* Company Story */}
       <section className="py-20 bg-black text-white ">
+        <Glow 
+        top="800px"
+        width="500px"
+        />
         <div className="w-full mx-25 p-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-19 items-center justify-between">
             <div className="">
@@ -85,10 +90,10 @@ export default function AboutPage() {
      
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-black ">
-        <div className="w-full mx-25 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-            <Card className=" max-w-4xl px-13 py-20  rounded-[60px] relative overflow-hidden bg-[#FFFFFF1A] border border-white shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300 ">
+      <section className="py-20 bg-black">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center max-w-[1800px] mx-auto">
+            <Card className="w-full max-w-4xl px-13 py-20 rounded-[60px] relative overflow-hidden bg-[#FFFFFF1A] border border-white shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300">
               <CardContent className="">
                 <h3 className={`text-5xl font-semibold text-[#1FE5FF] mb-10 ${exo2.className}`}>
                   Our Mission
@@ -96,7 +101,7 @@ export default function AboutPage() {
                 <p className={`text-white text-regular text-xl ${workSans.className}`}>{companyInfo.mission}</p>
               </CardContent>
             </Card>
-            <Card className=" max-w-4xl px-13 py-20  rounded-[60px] relative overflow-hidden bg-[#FFFFFF1A] border border-white  shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300">
+            <Card className="w-full max-w-4xl px-13 py-20 rounded-[60px] relative overflow-hidden bg-[#FFFFFF1A] border border-white shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300">
               <CardContent className="">
                 <h3 className={`text-5xl font-semibold text-[#1FE5FF] mb-10 ${exo2.className}`}>
                   Our Vision
@@ -112,6 +117,11 @@ export default function AboutPage() {
 
       {/* Stats Section */}
       <section className="w-full flex items-center justify-center py-20 mt-10">
+        <Glow 
+        top="2300px"
+        right="10px"
+        width="500px"
+        />
         <div className="w-full  mx-30 h-[242px] mt-20 rounded-[25px] relative overflow-hidden bg-[#FFFFFF1A] border border-white backdrop-blur-[194.27px] ">
           
           <div className="grid grid-cols-4 gap-3 w-full h-full items-center justify-center p-5">
@@ -128,6 +138,10 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="py-20 bg-black w-full">
+        <Glow
+        top="3200px"
+        right="500px"
+        />
         <div className=" mx-32   sm:px-6 lg:px-15">
           <div className="mb-16">
             <div className={`${exo2.className} bg-[#1FE5FF] -skew-x-12 w-fit inline-block  rounded-lg mb-15`}>
@@ -183,6 +197,22 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section className="py-20 bg-black" id="team">
+        <Glow 
+          top="4400px"
+        />
+
+        <Glow 
+          top="5000px"
+          right="10px"
+        />
+
+        <Glow 
+          top="6000px"
+          left="10px"
+          height="500px"
+          width="500px"
+          
+        />
         <div className="w-full mx-auto m-25  px-4 sm:px-6 lg:px-8">
           <div className={`${exo2.className} text-white font-semibold text-6xl mx-32 mb-15 `}>
             <h2 className=" font-bold ">
