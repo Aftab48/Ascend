@@ -15,8 +15,8 @@ export function Glow({ top, left,right,width,height }: GlowProps) {
                 top,
                 left,
                 right,
-                backgroundColor: '#1FE5FFBF',
-                filter: 'blur(200px)',
+                backgroundColor: '#1fe5ff91',
+                filter: 'blur(300px)',
                 pointerEvents: 'none',
                 zIndex: 0
             }} />

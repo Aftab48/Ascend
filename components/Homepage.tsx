@@ -1,8 +1,10 @@
 "use client"
-import services from '@/public/services.json'
+// import services from '@/public/services.json'
 
 import Image from 'next/image'
-import projects from '@/public/projects.json'
+// import projects from '@/public/projects.json'
+import { projects } from '@/constants/projects'
+import { services } from '@/constants/services'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import CarouselSize from './Carousel'
@@ -262,7 +264,7 @@ function HeroSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
-                }}>
+                }}> <Link href={`/contact`}>
                     <button   style={{
                         fontFamily: 'Work Sans, sans-serif',
                         fontWeight: 500,
@@ -278,6 +280,7 @@ function HeroSection() {
                     }}>
                         Start Your Project
                     </button>
+                    </Link>
                 </div>
 
                 {/* Second button wrapper */}
@@ -290,7 +293,7 @@ function HeroSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
-                }}>
+                }}> <Link href={`/portfolio`}>
                     <button style={{
                         fontFamily: 'Work Sans, sans-serif',
                         fontWeight: 500,
@@ -306,6 +309,7 @@ function HeroSection() {
                     }}>
                         View Our work
                     </button>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -434,11 +438,12 @@ function WhyChooseUs() {
                         </div>
 
                         {/* Button */}
-                        <div className="mx-auto md:mx-0 " style={{
+                        <Link href={`/about`}>
+                        <div className="mx-auto md:mx-0 bg-[#1fe5ff] hover:bg-[#A7F2FC] " style={{
                             width: 'clamp(300px, 100%, 400px)',
                             height: 'clamp(65px, 5vw, 78.62px)',
                             borderRadius: '100px',
-                            backgroundColor: '#1FE5FF',
+                            
                             boxShadow: '0px 0px 44.4px 0px #000000',
                             display: 'flex',
                             alignItems: 'center',
@@ -467,6 +472,7 @@ function WhyChooseUs() {
                                 className='transform hover:scale-115 transition-transform duration-300'
                             />
                         </div>
+                        </Link>
                     </div>
 
                     {/* Design img */}
@@ -564,11 +570,12 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-white font-["Work_Sans"]  text-base md:text-lg lg:text-2xl  leading-snug md:leading-[100%] w-full'>
-                                        {services[0].content}
+                                        {services[0].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[0].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
@@ -576,9 +583,10 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
 
                             
@@ -597,11 +605,12 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                        {services[1].content}
+                                        {services[1].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[1].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
@@ -609,9 +618,10 @@ function ServicesSection() {
                                         width={35}
                                         height={33}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300 '
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
 
                             
@@ -630,21 +640,23 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                        {services[2].content}
+                                        {services[2].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[2].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
                                         src='/assets/learn-more.png'
-                                        width={45}
-                                        height={42}
+                                        width={35}
+                                        height={33}
                                         alt='Learn More'
-                                        className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
                         </div>
 
@@ -667,21 +679,23 @@ function ServicesSection() {
                                         </h2>
                                         </div>
                                         <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                            {services[3].content}
+                                            {services[3].shortDescription}
                                         </p>
                                     </div>
-                                    <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                        <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
-                                            Learn More
-                                        </p>
-                                        <Image
-                                            src='/assets/learn-more-black.png'
-                                            width={35}
-                                            height={33}
-                                            alt='Learn More'
-                                            className='rotate-180 w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
-                                        />
-                                    </div>
+                                <Link href={`/services#${services[3].slug}`}>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
+                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-lg font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more-black.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
+                                    />
+                                </div>
+                                </Link>
                                 </div>
 
                                 
@@ -700,21 +714,23 @@ function ServicesSection() {
                                         </h2>
                                         </div>
                                         <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                            {services[4].content}
+                                            {services[4].shortDescription}
                                         </p>
                                     </div>
-                                    <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                        <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
-                                            Learn More
-                                        </p>
-                                        <Image
-                                            src='/assets/learn-more.png'
-                                            width={35}
-                                            height={33}
-                                            alt='Learn More'
-                                            className='w-[35px] rotate-[180deg] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
-                                        />
-                                    </div>
+                                <Link href={`/services#${services[4].slug}`}>
+                                <div className='flex items-center gap-2 mt-3 cursor-pointer'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-lg font-medium'>
+                                        Learn More
+                                    </p>
+                                    <Image
+                                        src='/assets/learn-more.png'
+                                        width={35}
+                                        height={33}
+                                        alt='Learn More'
+                                        className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
+                                    />
+                                </div>
+                                </Link>
                                 </div>
                             </div>
                         </div>
@@ -737,11 +753,12 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                        {services[5].content}
+                                        {services[5].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[5].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-black font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
@@ -752,6 +769,7 @@ function ServicesSection() {
                                         className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
 
                             <div className='shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full max-w-full rounded-[25px] bg-[#0D0D0D] backdrop-blur-[10px] p-4 md:p-6 flex flex-col justify-between min-h-[280px] md:min-h-[320px] lg:min-h-[345px]'>
@@ -769,11 +787,12 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-white font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                        {services[6].content}
+                                        {services[6].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[6].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-white font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-white font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
@@ -784,6 +803,7 @@ function ServicesSection() {
                                         className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
 
                             
@@ -802,11 +822,12 @@ function ServicesSection() {
                                         </h2>
                                     </div>
                                     <p className='text-black font-["Work_Sans"] text-base md:text-lg lg:text-2xl leading-snug md:leading-[100%] w-full'>
-                                        {services[7].content}
+                                        {services[7].shortDescription}
                                     </p>
                                 </div>
+                                <Link href={`/services#${services[7].slug}`}>
                                 <div className='flex items-center gap-2 mt-3 cursor-pointer'>
-                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-base font-medium'>
+                                    <p className='text-[#0d0d0d] font-["Work_Sans"] text-sm md:text-lg font-medium'>
                                         Learn More
                                     </p>
                                     <Image
@@ -817,6 +838,7 @@ function ServicesSection() {
                                         className='rotate-[180deg] w-[35px] h-[33px] md:w-[45px] md:h-[42px] transform hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -902,61 +924,16 @@ function TeamSection() {
     return (
         <section className="relative w-full mx-auto mt-15 md:mt-28 lg:mt-30">
             <div className="relative mx-auto w-full min-h-[500px] rounded-[50px] bg-[#1FE5FF] overflow-visible">
-                <div 
-                    className="absolute inset-0 rounded-[50px] pointer-events-none"
-                    style={{
-                        border: '2.9px solid black',
-                    }}
-                />
+               <Link href={`/about#team`}>
+               <Image 
+                src="/assets/Team-card.png"
+                width={2000}
+                height={200}
+                alt='Team'
+               />
+                </Link>
                 
-                
-                <div className='relative w-full p-2 md:p-12 lg:p-8 flex flex-col items-center justify-center min-h-[400px]'>
-                    
-                    <div className='flex flex-wrap items-end gap-4 md:gap-6 lg:gap-13 pb-4 md:pb-6'>
-                       
-                        <div className='bg-[#EBEBEB] rounded-[10px] px-6 md:px-8 py-4 md:py-2 -skew-x-12 flex-shrink-0 mb-2 md:mb-3 lg:mb-28'>
-                            <h2 className='skew-x-12 font-["Exo_2"] font-semibold text-2xl md:text-3xl lg:text-4xl text-black whitespace-nowrap'>
-                                MEET THE
-                            </h2>
-                        </div>
-
-                        
-                        <div className='relative flex-shrink-0'>
-                            <h1 
-                                className={`${exo2.className} font-semibold text-black leading-[120%]`}
-                                style={{
-                                    fontSize: 'clamp(80px, 15vw, 300px)',
-                                }}
-                            >
-                                TEAM
-                            </h1>
-                            
-                           
-                            <img
-                                src="/assets/team.png"
-                                alt="Team"
-                                className='absolute top-15/16 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-auto object-contain pointer-events-none z-10'
-                            />
-                        </div>
-
-                        
-                        <div className='max-w-[345px] pb-2 md:pb-3 mb-18'>
-                            <p className='font-["Exo_2"] font-medium text-lg md:text-2xl lg:text-[32px] leading-[100%] text-black'>
-                                Get to know the people who make it happen.
-                            </p>
-                            <img
-                                src="/assets/team-icon.png"
-                                alt="Team Icon"
-                                className='w-23 h-25 rotate-[-48deg] object-contain'
-                            />
-                        </div>
-                    </div>
-
-                    
-                    <div className='mt-6 md:mt-8 lg:mt-10'>
-                        
-                    </div>
-                </div>
+               
             </div>
         </section>
     )
@@ -1028,7 +1005,7 @@ function Projects(){
 
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-5 lg:gap-5">
-                    {projects.map((project, index) => (
+                    {projects.slice(0,3).map((project, index) => (
                         <div 
                             key={index}
                             className="relative rounded-[30px] bg-[#1FE5FF] p-6 md:p-8 flex flex-col gap-2"
@@ -1042,7 +1019,7 @@ function Projects(){
                             
                             <div className="relative w-full max-w-[415px] h-[310px] mx-auto">
                                 <Image
-                                    src={`/assets/${project.image}`}
+                                    src={`${project.thumbnail}`}
                                     fill
                                     alt={project.title}
                                     className="object-cover rounded-lg"
@@ -1059,7 +1036,7 @@ function Projects(){
                                         justifyContent: 'center'
                                     }}
                                 >
-                                    {project.tag}
+                                    {project.category}
                                 </div>
                             </div>
 
@@ -1079,31 +1056,23 @@ function Projects(){
 
                                
                                 <p 
-                                    className={`${workSans.className} text-black`}
-                                    style={{
-                                        fontSize: 'clamp(14px, 1.2vw, 16px)',
-                                        fontWeight: 400,
-                                        lineHeight: '1.5',
-                                        minHeight: '95px'
-                                    }}
+                                    className={`${workSans.className} text-black text-xl font-regular`}
+                                    
                                 >
-                                    {project.content}
+                                    {project.tagline}
                                 </p>
 
-                                <Link href='#'>
-                                <div className="flex items-center gap-2 mt-auto">
+                                <Link href={`/portfolio/${project.slug}`}>
+                                <div className="  flex items-center  gap-2 mt-10 drop-shadow-[0_0_20px_#06292e] ">
                                     <span 
-                                        className={`${workSans.className} text-black`}
-                                        style={{
-                                            fontSize: 'clamp(14px, 1.2vw, 16px)',
-                                            fontWeight: 500
-                                        }}
+                                        className={`${workSans.className} text-white text-xl font-regular  drop-shadow-[0_0_20px_#06292e]`}
+                                        
                                     >
                                         View Case Study
                                     </span>
                                     <div className="relative w-[34px] h-[32px] flex-shrink-0">
                                         <Image
-                                            src="/assets/learn-more-black.png"
+                                            src="/assets/learn-more.png"
                                             fill
                                             alt="arrow"
                                             className="object-contain rotate-180 transform hover:scale-110 transition-transform duration-300"
@@ -1115,9 +1084,9 @@ function Projects(){
                         </div>
                     ))}
                 </div>
-                <div className='flex justify-center items-center w-full h-20 mt-15'>
-                    <Link href='#'>
-                    <Button className={` ${workSans.className} w-81 h-19 bg-transparent text-[#EBEBEB] border-[4px] text-2xl rounded-3xl cursor-pointer`}>View All Projects <Image 
+                <div className='flex justify-center items-center w-full h-20 mt-15 '>
+                    <Link href='/portfolio'>
+                    <Button className={` ${workSans.className} w-81 h-19 bg-transparent text-[#EBEBEB] border-[4px] text-2xl rounded-3xl cursor-pointer hover:scale-105 transform duration-300`}>View All Projects <Image 
                         src="/assets/arrow.png"
                         height={30}
                         width={35}
@@ -1185,22 +1154,22 @@ function ClientReviews() {
                     <div  className='grid grid-cols-4 gap-3 w-full h-full items-center justify-center p-5 '>
 
                         <div className='flex flex-col col-span-1 items-center text-center  text-white text-2xl'>
-                            <h1 className='font-bold text-4xl'>500<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <h1 className='font-bold text-6xl scale-105'>500<span className=' text-[#1FE5FF] '>+</span></h1>
                             <p>Satisfied Clients</p>
                         </div>
 
                         <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl'>
-                            <h1 className='font-bold text-4xl'>5<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <h1 className='font-bold text-6xl scale-105'>5<span className=' text-[#1FE5FF] '>+</span></h1>
                             <p>Years of experience</p>
                         </div>
 
                         <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl' >
-                            <h1 className='font-bold text-4xl'>100<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <h1 className='font-bold text-6xl scale-105'>100<span className=' text-[#1FE5FF] '>+</span></h1>
                             <p>Projects Delivered</p>
                         </div>
 
                         <div className='flex flex-col col-span-1 items-center text-center text-white text-2xl mt-4'>
-                            <h1 className='font-bold text-4xl'>5<span className=' text-[#1FE5FF] '>+</span></h1>
+                            <h1 className='font-bold text-6xl scale-105'>5<span className=' text-[#1FE5FF] '>+</span></h1>
                             <p>Lines of code & </p>
                             <p>Creative pixels</p>
                         </div>

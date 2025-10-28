@@ -8,9 +8,9 @@ import {
 } from "@/components/ui/accordion"
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import Image from "next/image";
-import faq from "@/public/faq.json"
+import { faqs } from "@/constants/faqs";
 import { Button } from "./ui/button";
-
+import Link from "next/link";
 
 const workSans = Work_Sans({
     subsets:["latin"],
@@ -61,14 +61,14 @@ export default function FAQItem() {
                 </div>
                 <div className="flex flex-col items-center w-full">
                   <Accordion type="single" collapsible className="w-full max-w-7xl">
-                      {faq.map((item, index) => (
+                      {faqs.map((item, index) => (
                           <AccordionItem 
                               key={index}
                               className="w-full p-4 border-b border-[#EBEBEB]/30" 
                               value={item.id}
                           >
                               <AccordionTrigger 
-                                  className={`${workSans.className} text-3xl font-normal text-white [&>svg]:w-17 [&>svg]:h-10 [&>svg]:text-[#1FE5FF]`}
+                                  className={`${workSans.className} text-3xl font-normal text-white [&>svg]:w-17 [&>svg]:h-10 [&>svg]:text-[#1FE5FF] hover:no-underline`}
                               >
                                   {item.question}
                               </AccordionTrigger>
@@ -93,7 +93,7 @@ export default function FAQItem() {
                               background: 'rgba(109, 105, 105, 0.53)'
                             }}
                           >
-                           
+                           <Link href={`/contact`}>
                             <Button 
                               className={` w-70 h-13 rounded-3xl bg-[#1FE5FF] text-black text-xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
                               style={{
@@ -102,8 +102,8 @@ export default function FAQItem() {
                             >
                               Get a free consultation
                             </Button>
-                            
-                            
+                            </Link>
+                            <Link href={`/services`}>
                             <Button 
                               className={` w-70 h-13 rounded-3xl bg-transparent border border-white text-white text-xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer`}
                               style={{
@@ -112,6 +112,7 @@ export default function FAQItem() {
                             >
                               Explore our services
                             </Button>
+                            </Link>
                           </div>
                       </div>
                       <div className="flex flex-col col-span-1 items-center ">

@@ -70,9 +70,9 @@ export function Project({title,image,tag,content,slug}:Projectprops){
 
                                
                                 <p 
-                                    className={`${workSans.className} text-[#1FE5FF]`}
+                                    className={`${workSans.className} text-[#1FE5FF] text-xl`}
                                     style={{
-                                        fontSize: 'clamp(14px, 1.2vw, 16px)',
+                                        
                                         fontWeight: 400,
                                         lineHeight: '1.5',
                                         minHeight: '95px'
@@ -84,9 +84,9 @@ export function Project({title,image,tag,content,slug}:Projectprops){
                                 <Link href={`/portfolio/${slug}`}>
                                 <div className="flex items-center gap-2 mt-auto">
                                     <span 
-                                        className={`${workSans.className} text-[#1FE5FF]`}
+                                        className={`${workSans.className} text-[#1FE5FF] text-xl`}
                                         style={{
-                                            fontSize: 'clamp(14px, 1.2vw, 16px)',
+                                            
                                             fontWeight: 500
                                         }}
                                     >

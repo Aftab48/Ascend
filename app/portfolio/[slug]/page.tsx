@@ -7,7 +7,7 @@ import { ArrowLeft, Calendar, Tag, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { projects } from "@/constants/projects";
-
+import Glow from "@/components/Glow";
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import ProjectImageCarousel from "@/components/ProjectCarousol";
 
@@ -70,6 +70,29 @@ export default function ProjectPage({ params }: Props) {
 
   return (
     <>
+      <Glow
+        top={"350px"}
+        right={"-50px"}
+        height="400px"
+        />
+        <Glow
+          top={"1050px"}
+          left={"-150px"}
+          height="400px"
+          />
+
+        <Glow
+          top={"1900px"}
+          right={"650px"}
+          
+          /> 
+
+        <Glow
+          top={"2850px"}
+          left={"250px"}
+          height="400px"
+          width="400px"
+          />       
     <section className="h-80 bg-black"></section>
 
       
@@ -313,7 +336,7 @@ export default function ProjectPage({ params }: Props) {
                               </Button>
                               </Link>
                                               
-                               <Link href={`/about#team`}>
+                               <Link href={`/portfolio`}>
                                   <Button 
                                    className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
                                     style={{

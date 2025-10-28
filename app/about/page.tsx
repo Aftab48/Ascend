@@ -11,7 +11,7 @@ import Strip from "@/components/Strip";
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import Team from "@/components/TeamCard";
 import Glow from "@/components/Glow";
-
+import Link from "next/link";
 
  const workSans = Work_Sans({
     subsets:["latin"],
@@ -35,7 +35,7 @@ export default function AboutPage() {
     <>
 
 
-      <section className=" relative bg-black pt-60 md:pt-72 lg:pt-90 pb-20 -mt-24 md:-mt-1 lg:-mt-1 text-white border-b-1 mx-25 ">
+      <section className=" relative bg-[#0d0d0d] pt-60 md:pt-72 lg:pt-90 pb-20 -mt-24 md:-mt-1 lg:-mt-1 text-white border-b-1 mx-25 ">
         <div className={`w-full mx-auto px-4 sm:px-6 lg:px-8 text-center ${exo2.className}  `}>
           <h1 className="text-4xl md:text-5xl lg:text-[80px] font-bold  mb-6  text-[#FFFFFF] drop-shadow-[0_0_20px_#1FE5FF]">
            About Ascend Tech Agency
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
 
       {/* Company Story */}
-      <section className="py-20 bg-black text-white ">
+      <section className="py-20 bg-[#0d0d0d] text-white ">
         <Glow 
         top="800px"
         width="500px"
@@ -90,7 +90,7 @@ export default function AboutPage() {
      
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-[#0d0d0d]">
         <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center max-w-[1800px] mx-auto">
             <Card className="w-full max-w-4xl px-13 py-20 rounded-[60px] relative overflow-hidden bg-[#FFFFFF1A] border border-white shadow-lg shadow-[0_0_25px_#1FE5FF] transition-all duration-300">
@@ -137,7 +137,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-black w-full">
+      <section className="py-20 bg-[#0d0d0d] w-full">
         <Glow
         top="3200px"
         right="500px"
@@ -196,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-black" id="team">
+      <section className="py-20 bg-[#0d0d0d]" id="team">
         <Glow 
           top="4400px"
         />
@@ -363,7 +363,7 @@ export default function AboutPage() {
                                     style={{
                                       background: 'rgba(38, 37, 37, 0.53)'
                                       }}>
-                                  
+                                  <Link href={`/contact`}>
                                     <Button
                                       className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
                                       style={{
@@ -372,8 +372,9 @@ export default function AboutPage() {
                                         
                                           Get in Touch 
                                         </Button>
+                                        </Link>
                                         
-                                        
+                                        <Link href={`/portfolio`}>
                                         <Button 
                                           className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
                                           style={{
@@ -382,6 +383,7 @@ export default function AboutPage() {
                                         
                                           View Our Work
                                         </Button>
+                                        </Link>
                                       </div>
                               </div>
                               <div className="flex flex-col col-span-1 items-center mb-15 ">

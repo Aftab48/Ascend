@@ -39,9 +39,9 @@ export default function PortfolioPage() {
   return (
     <>
 
-      <section className="bg-black border-b-2 border-white mx-30 h-100"></section>
+      <section className="bg-[#0d0d0d] border-b-2 border-white mx-30 h-100"></section>
       {/* Hero Section */}
-      <section className="bg-black py-20">
+      <section className="bg-[#0d0d0d] py-20">
         <div className={`${exo2.className} w-full mx-auto px-4 sm:px-6 lg:px-8 text-center `}>
           <h1 className="text-4xl md:text-6xl lg:text-[80px] font-bold text-white mb-6">
             Our Portfolio
@@ -54,7 +54,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid Section */}
-      <section className={`py-20 bg-black ${workSans.className}`}>
+      <section className={`py-20 bg-[#0d0d0d] ${workSans.className}`}>
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter - For future enhancement */}
           <div className="mb-12">

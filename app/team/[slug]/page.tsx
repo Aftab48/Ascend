@@ -8,7 +8,7 @@ import { teamMembers } from "@/constants/teamInfo";
 import type { Metadata } from "next";
 import { Work_Sans, Exo_2 } from 'next/font/google'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
+import Glow from "@/components/Glow";
 
  const workSans = Work_Sans({
     subsets:["latin"],
@@ -62,11 +62,24 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
 
   return (
     <>
- 
+        <Glow
+          top={"720px"}
+          left={"720px"}
+          height="400px"
+          />
 
-    
+          <Glow
+            top={"1700px"}
+            left={"-150px"}
+            height="400px"
+            />
+          <Glow
+            top={"2750px"}
+            right={"450px"}
+            height="400px"
+            />      
       {/* Hero Section */}
-      <section className={`bg-black  mt-80 ${workSans.className}`}>
+      <section className={`bg-[#0d0d0d]  mt-80 ${workSans.className}`}>
        <div className="h-90 bg-[#8C8C8C]/40 flex flex-col items-center justify-end transition-all duration-300 " style={{boxShadow: '0 0 35px #8C8C8C'}}>
      
         </div>
@@ -218,8 +231,8 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
               {member.achievements.map((achievement, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow bg-[#1FE5FF] rounded-4xl pt-5 pb-0 overflow-hidden">
               <div className="bg-white h-full py-10 rounded-3xl">
-                <CardContent className="pt-6">
-                <div className="flex items-center ml-7 gap-3 ">
+                <CardContent className="">
+                <div className="flex items-center ml-7 gap-3 mb-2 ">
                     <div className="w-8 h-8 bg-[#1FE5FF] rounded-full flex items-center justify-center flex-shrink-0 mt-1 ">
                     <span className="text-white font-bold text-lg">{index + 1}</span>
                     </div>

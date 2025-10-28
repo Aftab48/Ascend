@@ -60,6 +60,23 @@ export default function ServicesPage() {
       top={"5650px"}
       right={"750px"}
       />
+
+       <Glow
+      top={"6650px"}
+      right={"1000px"}
+      width="600px"
+      height="600px"
+      />
+      <Glow
+      top={"7650px"}
+      right={"-50px"}
+      height="400px"
+      />
+       <Glow
+      top={"8250px"}
+      left={"-50px"}
+      height="400px"
+      />
       {/* Hero Section */}
       <section className=" relative bg-white pt-60 md:pt-72 lg:pt-90 pb-20 -mt-24 md:-mt-1 lg:-mt-1">
         <div className={`w-full mx-auto px-4 sm:px-6 lg:px-8 text-center ${exo2.className} `}>
@@ -264,7 +281,7 @@ export default function ServicesPage() {
                                     background: 'rgba(38, 37, 37, 0.53)'
                                   }}
                                 >
-                                 
+                                 <Link href={`/contact`}>
                                   <Button 
                                     className={` w-80 h-19 rounded-full bg-[#1FE5FF] text-black text-2xl font-medium hover:bg-[#A7F2FC] transition-colors duration-300 cursor-pointer`}
                                     style={{
@@ -273,8 +290,9 @@ export default function ServicesPage() {
                                   >
                                     Schedule Consultation 
                                   </Button>
+                                  </Link>
                                   
-                                  
+                                  <Link href={`/services`}>
                                   <Button 
                                     className={` w-80 h-19 rounded-full bg-transparent border border-white text-white text-2xl font-medium hover:bg-[#292D2E] transition-colors duration-300 cursor-pointer overflow-hidden`}
                                     style={{
@@ -283,6 +301,7 @@ export default function ServicesPage() {
                                   >
                                     Explore our services
                                   </Button>
+                                  </Link>
                                 </div>
                     </div>
                         <div className="flex flex-col col-span-1 items-center mb-15 ">

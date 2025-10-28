@@ -105,7 +105,7 @@ export default function ContactPage() {
 
        <style jsx global>{`
         body {
-          background-color: white ;
+          background-color: #ebebeb ;
         }
       `}</style>
 
@@ -124,7 +124,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className={`${exo2.className} py-20 bg-white`}>
+      <section className={`${exo2.className} py-20 bg-[#ebebeb]`}>
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mx-25">
             {/* Contact Information */}
@@ -278,72 +278,16 @@ export default function ContactPage() {
 
         <div className="border-b-4 border-black mx-40 mt-20 blur-md "></div>
       </section>
-      <section className={`p-20 mt-70 relative ${exo2.className} font-semibold text-2xl`}>
-
-      <Tools
-      content="BLOCKCHAIN"
-      left="20px"
-      classname="rotate-[-14.4deg] -translate-y-1/2"
-      />
-
-      <Tools
-      content="BRAND DESIGN"
-      left="211px"
-      classname="rotate-[0deg]"
-      />
-
-      <Tools
-      content="SEO"
-      left="371px"
-      bottom="29px"
-      classname="rotate-[37.6deg] -translate-y-1/2"
-      />
-      <Tools
-      content="AI/ML"
-      left="670px"
-      bottom="0PX"
-      classname="rotate-[0deg] ml-15 "
-      />
-      <Tools
-      content="WEB3"
-      left="800px"
-      bottom="61px"
-      
-      classname="rotate-[0deg] ml-15 "
-      />
-       <Tools
-      content="BACKEND"
-      left="1050px"
-      bottom="61px"
-      
-      classname="rotate-[45.8deg] -translate-y-1/2 "
-      />
-
-        <Tools
-      content="UI/UX"
-      left="1300px"
-      bottom="20px"
-      
-      classname="rotate-[-20.19deg] -translate-y-1/2 ml-8 "
-      />
-        <Tools
-      content="WEB DEVELOPMENT"
-      left="1500px"
-      bottom="20px"
-      
-      classname="rotate-[-20.45deg] -translate-y-1/2 "
-      />
-        <Tools
-      content="APP DEVELOPEMENT"
-      left="1680px"
-      bottom="61px"
-      
-      classname="rotate-[-65.8deg] -translate-y-1/2 "
-      />
-      
-
-      </section>
-      <div className="border-t-8 border-black   blur-md "></div>
+  <section>
+    <Image
+    
+    src="/assets/tools.png"
+    width={2000}
+    height={200}
+    alt="tools"
+    />
+  </section>
+      {/* <div className="border-t-8 border-black   blur-md "></div> */}
       <div className="h-20 bg-black "></div>
 
       {/* FAQ Quick Links */}

@@ -15,7 +15,7 @@ export default function Navbar() {
     ];
 
     const isActive = (path: string) => pathname === path;
-    const activeCss = 'bg-[#12cbe3] h-16 w-45 flex items-center justify-center  text-white rounded-full px-10'
+    const activeCss = 'bg-[#a1edf7] h-16 w-45 flex items-center justify-center  text-black rounded-full px-10'
     return (
         <>
             <div className="absolute left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[1470px] top-8 md:top-12 lg:top-[54px] h-24 md:h-32 lg:h-[147px]">
