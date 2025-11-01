@@ -207,34 +207,37 @@ export const teamMembers: TeamMember[] = [
     name: "Subha Maity",
     slug: "subha-maity",
     role: "Software Developer",
-    bio: "A creative Software Developer passionate about building innovative technology. He has keen interest in psychology and loves travelling.",
-    summary: "Sofia Martinez is a certified Agile project manager with 9 years of experience leading digital transformation projects. She specializes in bridging the gap between technical teams and stakeholders, ensuring smooth project delivery while maintaining high quality standards. Sofia is passionate about process optimization, team collaboration, and delivering exceptional value to clients. Her strategic approach and excellent communication skills have been instrumental in the success of numerous high-stakes projects.",
+    bio: "A creative Software Developer passionate about building scalable technology. Loves travelling.",
+    summary: "Experienced Backend Developer with a strong track record of building scalable backend services and developing secure, high-performance APIs. Skilled in optimizing database interactions to reduce system load and operational costs across multiple projects. Adept at implementing efficient, maintainable, and reliable backend architectures that enhance overall application performance and scalability.",
     image: "/assets/team/subha.jpg",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
-    email: "sofia@ascendtech.agency",
-    yearsOfExperience: 9,
-    techStack: ["Jira", "Asana", "Monday.com", "Slack", "Miro", "Confluence", "MS Project", "Agile", "Scrum", "Kanban"],
+    linkedin: "https://www.linkedin.com/in/subha-maity-79a238254",
+    twitter: "https://x.com/subhamaity21",
+    github: "https://github.com/Subhamaity21",
+    website: "https://www.subha.me",
+    email: "subha.maity814@gmail.com",
+    yearsOfExperience: 2,
+    techStack: ["NextJs", "React", "NodeJs", "MongoDB", "ExpressJs", "Tailwind"],
     achievements: [
-      "Managed 80+ successful project deliveries",
+      "Managed 10+ successful project deliveries",
       "Maintained 98% client satisfaction rate",
-      "PMP & Scrum Master certified",
+      "Reduced service cost by 25% by optimization",
       "Reduced project delivery time by 25% through process optimization",
       "Built and led teams of 30+ professionals"
     ],
     projects: [
       {
-        title: "E-Commerce Platform Redesign",
-        description: "Managed end-to-end delivery of a complex e-commerce redesign involving 15+ team members across 3 time zones.",
-        role: "Senior Project Manager",
-        technologies: ["Agile", "Jira", "Confluence", "Stakeholder Management"],
-        link: "/portfolio/ecommerce-platform"
+        title: "Mystry Message",
+        description: "A complex messaging platform for sending anonymous messages",
+        role: "Full Stack Developer",
+        technologies: ["Next", "React", "Shadcn UI", "Tailwind"],
+        link: "https://feedback.subha.me"
       },
       {
-        title: "Healthcare Management System",
-        description: "Led project management for HIPAA-compliant healthcare system, coordinating with medical professionals, developers, and compliance teams.",
+        title: "Resume Genie",
+        description: "AI based resume analyzer and Q&A platform",
         role: "Technical Project Manager",
-        technologies: ["Waterfall-Agile Hybrid", "Risk Management", "Compliance Coordination"]
+        technologies: ["Gemini", "Vercel AI SDK", "NextJS"],
+        link:"https://resume-analyzer.subha.me"
       },
       {
         title: "Digital Transformation Initiative",
