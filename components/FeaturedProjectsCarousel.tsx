@@ -43,7 +43,7 @@ export default function FeaturedProjectsCarousel({
   subtitle = "Key projects that showcase their expertise and impact",
   hideHeader = false,
 }: FeaturedProjectsCarouselProps = {}) {
-  const displayProjects = customProjects || projects.map((p) => ({
+  const displayProjects: ProjectItem[] = customProjects || projects.map((p): ProjectItem => ({
     title: p.title,
     description: p.description,
     category: p.category,
@@ -116,7 +116,7 @@ export default function FeaturedProjectsCarousel({
           {/* Left Arrow */}
           <button
             onClick={goToPrevious}
-            className="z-10 w-14 h-14 rounded-full bg-black border-2 border-[#1FE5FF] flex items-center justify-center text-white hover:bg-[#1FE5FF]/10 transition-all duration-300 shadow-[0_0_20px_#1FE5FF] flex-shrink-0"
+            className="z-10 w-14 h-14 rounded-full bg-black border-2 border-[#1FE5FF] flex items-center justify-center text-white hover:bg-[#1FE5FF]/10 transition-all duration-300 shadow-[0_0_20px_#1FE5FF] shrink-0"
             aria-label="Previous project"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -194,7 +194,7 @@ export default function FeaturedProjectsCarousel({
           {/* Right Arrow */}
           <button
             onClick={goToNext}
-            className="z-10 w-14 h-14 rounded-full bg-black border-2 border-[#1FE5FF] flex items-center justify-center text-white hover:bg-[#1FE5FF]/10 transition-all duration-300 shadow-[0_0_20px_#1FE5FF] flex-shrink-0"
+            className="z-10 w-14 h-14 rounded-full bg-black border-2 border-[#1FE5FF] flex items-center justify-center text-white hover:bg-[#1FE5FF]/10 transition-all duration-300 shadow-[0_0_20px_#1FE5FF] shrink-0"
             aria-label="Next project"
           >
             <ChevronRight className="w-6 h-6" />
