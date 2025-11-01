@@ -9,28 +9,16 @@ const poppins = Poppins({
   display: "swap",
 });
 
-
-
 export const metadata: Metadata = {
   title: "Our Services | Ascend Tech Agency",
-  description: "Explore our comprehensive digital services including web development, app development, UI/UX design, Web3 solutions, and custom software development.",
+  description:
+    "Explore our comprehensive digital services including web development, app development, UI/UX design, Web3 solutions, and custom software development.",
 };
-
-
-
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-   
-        <div> {children}</div>
-        
-         
-      
-        
-      
-  );
+  return <div> {children}</div>;
 }

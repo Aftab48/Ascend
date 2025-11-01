@@ -401,6 +401,11 @@ export const companyInfo = {
       description: "Your success is our success. We're committed to delivering solutions that achieve your business goals.",
       icon: "client-success.png",
     },
+    {
+      title: "Quality",
+      description: "We prioritize quality in every aspect of our work, from code to communication, ensuring long-term value and reliability.",
+      icon: "achievement.png",
+    },
   ],
   story: "Founded in <span class=\"text-[#1FE5FF]\">2020</span>, Ascend Tech Agency emerged from a simple belief: that every business deserves access to world-class technology solutions. What started as a small team of passionate developers has grown into a full-service digital agency, but our core values remain the same. We're not just building software; we're building partnerships and helping businesses reach new heights through technology.",
   stats: [
