@@ -1,11 +1,8 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
-import * as Icons from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { CardContent, CardHeader } from "@/components/ui/card";
 import { services } from "@/constants/services";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Glow from "@/components/Glow";
 
@@ -71,8 +68,6 @@ export default function ServicesPage() {
         <section className="py-20 bg-black">
           <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             {services.map((service, index) => {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              const IconComponent = (Icons as any)[service.icon] || Icons.Code;
 
               return (
                 <div

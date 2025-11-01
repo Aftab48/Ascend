@@ -2,17 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  ArrowLeft,
   Mail,
   Linkedin,
   Twitter,
   Github,
   ExternalLink,
-  Award,
   Briefcase,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { teamMembers } from "@/constants/teamInfo";
 import type { Metadata } from "next";
 import { Work_Sans, Exo_2 } from "next/font/google";

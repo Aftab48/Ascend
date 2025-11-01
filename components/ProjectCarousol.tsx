@@ -6,11 +6,9 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ProjectImageCarouselProps {
   images: string[];
@@ -35,14 +33,6 @@ export default function ProjectImageCarousel({
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
-
-  const plugin = useRef(
-    Autoplay({
-      delay: 3000,
-      stopOnInteraction: false,
-      stopOnMouseEnter: false,
-    }),
-  );
 
   return (
     <Carousel

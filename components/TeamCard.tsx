@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import * as Icons from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { teamMembers, companyInfo } from "@/constants/teamInfo";
-import { Work_Sans, Exo_2 } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 
 const workSans = Work_Sans({
   subsets: ["latin"],

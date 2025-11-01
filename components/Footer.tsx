@@ -1,17 +1,11 @@
 import Link from "next/link";
 import { Mail, Phone, Linkedin, Twitter, Github } from "lucide-react";
-import { Work_Sans, Exo_2 } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["600", "400", "500", "300"],
   variable: "--font-work-sans",
-});
-
-const exo2 = Exo_2({
-  subsets: ["latin"],
-  weight: ["600", "300"],
-  variable: "--font-exo-2",
 });
 
 const footerLinks = {

@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/constants/projects";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Work_Sans, Exo_2 } from "next/font/google";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Project from "@/components/Project";
@@ -42,10 +42,11 @@ export default function PortfolioPage() {
   const endIndex = startIndex + PROJECTS_PER_PAGE;
   const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
 
-  // Reset to page 1 when category changes
-  useEffect(() => {
+  // Handle category change and reset page
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
     setCurrentPage(1);
-  }, [selectedCategory]);
+  };
 
   return (
     <>
@@ -84,7 +85,7 @@ export default function PortfolioPage() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-6 py-2 rounded-full font-medium transition-all ${
                     category === selectedCategory
                       ? "bg-white text-black"

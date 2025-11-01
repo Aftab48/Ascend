@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Mail,
   Phone,
-  Send,
   MessageSquare,
   MessageCircleMore,
 } from "lucide-react";
@@ -16,7 +15,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import Cookies from "js-cookie";
 import { Work_Sans, Exo_2 } from "next/font/google";
-import { Tools } from "@/components/Tools";
 import Image from "next/image";
 
 const workSans = Work_Sans({
@@ -64,7 +62,11 @@ export default function ContactPage() {
     const prevForm = Cookies.get("formData");
     if (prevForm) {
       try {
-        setFormData(JSON.parse(prevForm));
+        // Defer setState to avoid synchronous setState in effect
+        const parsedData = JSON.parse(prevForm);
+        setTimeout(() => {
+          setFormData(parsedData);
+        }, 0);
       } catch (error) {
         console.error("Error parsing saved form data:", error);
       }
